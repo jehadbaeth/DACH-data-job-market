@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    # NON_KEYWORDS unreserves "key"/"value": real column names in this schema
+    # ("key" on ruleset/role_family/skill_definition) that H2 treats as
+    # reserved words but Postgres does not.
+    url: jdbc:h2:mem:dachjobs;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH;NON_KEYWORDS=KEY,VALUE
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+
+dachjobs:
+  adzuna:
+    app-id: test
+    app-key: test
+  export:
+    output-dir: build/test-export

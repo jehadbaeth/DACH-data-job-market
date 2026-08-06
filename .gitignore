@@ -17,3 +17,7 @@ data/raw/
 
 # os
 .DS_Store
+
+# gradle
+backend/.gradle/
+backend/build/
