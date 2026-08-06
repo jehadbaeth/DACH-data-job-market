@@ -1,114 +1,113 @@
-# What's up with the data-job market in Austria/Germany/Switzerland?
+# What's up with the software-dev job market in Austria/Germany/Switzerland?
 
-![tests](https://github.com/Chrisinho8/DACH-data-job-market/actions/workflows/tests.yml/badge.svg)
+**[Open the live tracker](https://github.com/jehadbaeth/DACH-data-job-market)** · updated every Monday at 06:00
 
-**[Open the live tracker](https://Chrisinho8.github.io/DACH-data-job-market/)** · last updated 5 August 2026
+A weekly snapshot of the DACH software development job market: live postings from Germany, Austria and Switzerland, classified into ten engineering role families and scanned against a language/framework/devops/cloud/database skill dictionary. A Spring Boot backend queries the Adzuna API, classifies and aggregates every posting in Postgres, and exports static JSON that a single-file Chart.js dashboard (`docs/index.html`) reads directly — no server needed to view it.
 
-A weekly snapshot of the DACH data-job market: **3,625 live postings from 1,462 employers** across Germany, Austria and Switzerland. Every Monday at 06:00 a Databricks pipeline queries the Adzuna API for 15 job titles in all three countries, deduplicates and classifies the results through a bronze/silver/gold Delta Lake, scans each posting against a curated 47-term skills dictionary, and publishes to a static site.
+This project started as a fork of [Christoph Ruckensteiner](https://www.linkedin.com/in/cruckensteiner112)'s original data-job-market dashboard, and keeps its UI layout and overall concept. Everything underneath it has since been rebuilt: the original was a Python/Databricks (Delta Lake, PySpark, Unity Catalog) pipeline tracking data/AI roles. This version is a Java/Spring Boot/Postgres pipeline, and it tracks a different vertical entirely — software engineering roles, not data/AI roles.
 
 ## What you can do with it
 
-- **See the shape of the market** - volumes by role, city and country, how long postings stay open, seniority mix, tool mentions, English-language share, salary disclosure.
-- **Read the postings behind any number.** Every chart is a count of real adverts, and those adverts are browsable: search by title or employer, filter by role family, country, city and seniority, sort by newest or longest-open, 20 per page. Titles link out to the aggregator.
-- **Drill down from a chart.** Click a city on the map or a bar in any role chart and the list below filters to it. Nothing on the site is a number you have to take on trust.
-- **Watch it move.** Nothing is ever overwritten, so each run adds to the record and every figure gains a second dimension: not just how many AI roles are open, but whether that number is climbing.
+- **See the shape of the market** — volumes by role, city and country, how long postings stay open, seniority mix, tool mentions, English-language share, salary disclosure.
+- **Read the postings behind any number.** Every chart is a count of real adverts, and those adverts are browsable: search by title or employer, filter by role family, country, city and seniority, sort by newest or longest-open. Titles link out to the aggregator.
+- **Drill down from a chart.** Click a city on the map or a cell in the country/role table and the postings list below filters to it.
+- **Compare two cities head to head**, or one role's tool demand against the DACH-wide baseline.
+- **Watch it move.** Every run appends to the history table rather than overwriting it, so posting counts and average ages gain a time dimension.
 
-## Main insights
+## Role families
 
-Snapshot of 2026-08-05.
- 
-![The map view: a DACH bubble map with the role filter, per-country totals and the top-cities table](assets/mappy.png)
- 
-Above: the map view. Bubbles are sized by posting count and coloured by country - Germany coral, Austria blue, Switzerland green. Pick any of the 15 role families and the whole view re-cuts to it: bubbles, the four country totals, and the top-cities table with each city's average days open. Click a bubble or a table row and the browsable posting list below filters to that city.
- 
-**Germany is the biggest market; Austria and Switzerland are footnotes.** 3,133 of 3,625 postings are German - 86.4%, against 6.2% Austrian and 7.3% Swiss. The blue and green clusters on the map are Vienna, Graz, Linz, Innsbruck and the Zurich–Bern–Geneva line, and that is close to all of them. Any single-country claim about AT or CH rests on a few dozen adverts per family.
- 
-**Hiring is concentrated in a handful of cities.** Berlin (422) and Munich (344) are 21% of DACH between them; the top five are 36%. The rest is spread across 250-odd cities - the scatter of small bubbles through the Rhine-Ruhr and the south - most of them carrying single-digit counts.
- 
-**Speed varies more by city than by role.** Düsseldorf clears in 48 days and Munich in 49, while Frankfurt sits at 80, Zurich at 104 and Vienna at 105. The two non-German capitals are the slowest markets on the board, at more than twice Munich's pace, and the red figures in the "Avg days" column are where that shows.
- 
-**Berlin and Munich are where AI hiring is the most prominent.** 37% of Berlin's postings and 42% of Munich's are AI roles, against 19% in Hamburg and 13% in Düsseldorf. Berlin is also the most international: 58.5% of its postings are in English, versus 14.9% in Düsseldorf.
+Ten published families, in the priority order the classifier checks them (first match on the job title wins):
 
- 
+1. Security Engineer
+2. Embedded / Firmware
+3. Game Developer
+4. QA / Test Automation
+5. DevOps / SRE
+6. Cloud / Platform Engineer
+7. Mobile Developer
+8. Frontend Developer
+9. Full Stack Developer
+10. Backend Developer — the catch-all for generic "software/application developer" titles that name a language but no more specific track
 
+Three more families exist but are excluded from every chart: `invalid` (parse artefacts, speculative applications), `entry programme` (Ausbildung, Werkstudent, Praktikum, Trainee — these distort posting-age figures if left in), and `other` (unclassified).
 
-## Scope: what counts as a data job
+Judgement calls worth knowing about: a title naming both "full stack" and a backend language is counted as full-stack, checked before the backend catch-all; "cloud engineer" and "DevOps/SRE" overlap in practice even though they're separate rules, and reasonable people would draw that line differently.
 
-**Data:** data engineer, data analyst, data scientist, data architect, analytics engineer, DWH / ETL, data governance, data consultant, BI developer.
+## Skill dictionary
 
-**AI:** AI engineer, GenAI / LLM, ML engineer, MLOps, AI consultant, AI research.
+Skills are grouped into five categories — language, framework, devops, cloud, database — and matched against posting titles/descriptions via regex, not an LLM, so every match points at a specific string and the counts are reproducible. The dictionary currently covers common languages (Java, Python, JavaScript/TypeScript, C#, Go, Rust, Kotlin, Swift, PHP, Ruby, C/C++), frameworks (Spring, React, Angular, Vue, .NET, Django, Flask, Node.js, Laravel, Rails), devops tooling (Docker, Kubernetes, Terraform, Git, CI/CD), cloud platforms (AWS, Azure, GCP) and databases (PostgreSQL, MySQL, SQL Server, MongoDB, Redis).
 
-| Excluded | Why |
-|---|---|
-| Titles saying "AI"/"KI" and naming no role | A title cannot tell an AI job from a job at a company that likes the word. The rule still runs and still catches them, but they are dropped. **AI figures are a floor, not a total.** |
-| German *Controlling*, FP&A, finance | Management accounting, a separate profession |
-| Ausbildung, duales Studium, Werkstudent, Praktikum, Trainee | Education programmes, and they stay listed for months, distorting the age figures |
-| Data **centre** infrastructure | False friend: "Data Center Engineering Operations" is physical infrastructure |
-| General software, cloud and DevOps engineering | Not data roles, pulled in by keyword overlap |
-| Speculative applications, parse artefacts | Not job postings at all |
+It does not yet cover security-specific tooling (SIEM, OWASP, pentest frameworks, IAM, compliance standards), which is why the Security Engineer family shows almost no skill data — there's very little in the current dictionary for those postings to match against.
 
-Excluded rows land in `silver.excluded` so the decision stays auditable.
+## Updating the rules and the list of monitored positions
+
+Everything that defines the classification behaviour lives in Postgres, seeded by Flyway migrations under `backend/src/main/resources/db/migration/`. **Never edit an already-applied migration** — Flyway checksums it on every boot and refuses to start if the file changed underneath it. Always add a new migration file instead (`V5__...sql`, `V6__...sql`, and so on). This makes every change additive: nothing is ever wiped, and rolling forward is just a redeploy.
+
+**To change which Adzuna search terms get pulled in:** edit the `dachjobs.adzuna.roles` list in `backend/src/main/resources/application.yml`. No code change, no migration — just a redeploy. This only decides what gets *ingested*; it does not affect how postings already ingested get classified.
+
+**To add, remove or re-prioritize a role family or its classification regex:** write a new migration that inserts into `role_family` and `classification_rule` for the `software-dev` ruleset (see `V4__software_dev_ruleset.sql` for the exact shape — `priority` controls check order, lower runs first, first match wins). To retire a family without breaking history, mark it `published = false` rather than deleting the row; existing postings keep their classification either way.
+
+**To add or change a skill:** insert into `skill_definition` (key, category, label) and `skill_alias` (regex patterns that map to that skill) in a new migration, scoped to the `software-dev` ruleset's `ruleset_id`. Skills are ruleset-scoped by design (`skill_definition.ruleset_id` + a composite unique constraint on `(ruleset_id, key)`), so adding a term here never touches any other vertical's dictionary.
+
+**To add a whole new vertical** (a different job-market slice entirely): insert a new row into `ruleset`, then role families, classification rules and a skill dictionary scoped to its id, the same way `V4__software_dev_ruleset.sql` did for software-dev. The pipeline loops over every row in `ruleset` automatically (`PipelineRunner.run()`), so a new ruleset starts getting classified and exported the moment its migration lands — no other code changes needed.
 
 ## Architecture
 
 ```
 Adzuna API (de, at, ch)
-  -> raw JSON cached in a Unity Catalog volume
-  -> Auto Loader (trigger availableNow)
-  -> BRONZE   append-only, every snapshot preserved
-  -> SILVER   parsed, classified, scope-filtered, deduplicated,
-              quality-gated
-  -> GOLD     aggregates + weekly history
-              + postings_public (the one row-level table)
-  -> JSON committed to this repo
-  -> GitHub Pages
+  -> raw_posting (Postgres, one row per pull per posting)
+  -> classification (title-regex rules, per ruleset, priority order)
+  -> posting + posting_skill (Postgres)
+  -> gold aggregation (JPA/SQL queries over posting + posting_skill)
+  -> JSON export to docs/data/
+  -> docs/index.html (static Chart.js dashboard, reads the JSON directly)
 ```
 
-![Visualized architecture](assets/pipeline-architecture.png)
+The whole pipeline (ingest → classify → aggregate → export) runs weekly via a Spring `@Scheduled` job, and can be triggered manually:
 
-**Browsing the postings.** Everything on the site is a count except one table. `gold.postings_public` ships as `docs/data/postings.json` and backs the searchable list. It carries title, employer, city, role family, seniority, age and the aggregator's `redirect_url` — not descriptions (not ours to redistribute, and 99.6% are truncated anyway) and not salary (mostly the aggregator's own prediction). Rows without a link are dropped rather than rendered dead.
+```bash
+curl -X POST "http://localhost:8080/api/pipeline/run?skipIngest=false"
+```
 
-**Skill extraction.** A curated dictionary of 47 terms, not an LLM, so every match points at a specific string in a specific posting and the counts are reproducible. The traps are real: "SQL" hides inside "PostgreSQL", "Java" inside "JavaScript", a bare "R" matches "R&D" and half of every German address block. Each one is pinned by a test in `tests/test_matcher.py` that runs in CI on every push. See `src/matcher.py`.
+Or per stage, per ruleset:
 
-**Deduplication.** Postings are hashed on title, company, city and the first 200 characters of the description; the earliest listing wins. Query overlap is counted separately from genuine reposts and is not published as a finding.
+```bash
+curl -X POST http://localhost:8080/api/pipeline/classify/software-dev
+curl -X POST http://localhost:8080/api/pipeline/export/software-dev
+```
+
+**Browsing the postings.** `docs/data/postings.json` backs the searchable list. It carries title, employer, city, role family, seniority, age and the aggregator's redirect URL — not descriptions (not ours to redistribute, and mostly truncated anyway) and not salary.
+
+**Deduplication.** Postings are hashed on title, company, city and the first 200 characters of the description; the earliest listing wins.
 
 **Posting age.** Days between the API's `created` date and the snapshot date, for postings still returned as live.
 
-**Location.** From each posting's own location array. In the city-states (Berlin, Hamburg, Bremen, Vienna, Basel, Geneva) the third level is a district and is collapsed into the parent. Administrative wrappers (`(Kreis)`, `-Umgebung`, `-Land`, `Region ...`) are stripped.
-
 ## Limitations
 
-
 - **`created` is the aggregator's date**, possibly when it indexed the posting rather than when the employer published it.
-- **Descriptions are capped at 500 characters** and 99.6% are truncated. Tool counts measure *mentioned in the title or opening paragraph* — a floor, not a requirement rate. The window is identical for every posting, so comparing tools holds; absolute rates do not.
-- **AI counts are a floor**, for the reason in the scope table. The dropped share is printed on every run of `03_silver_clean.py`; if it climbs, the six rules are going stale.
+- **Descriptions are capped at 500 characters**, and most are truncated. Skill counts measure *mentioned in the title or opening paragraph* — a floor, not a requirement rate. The window is identical for every posting, so comparing tools holds; reading one percentage as a real requirement rate does not.
 - **A posting in the browser is not necessarily open.** It was live at the last refresh. Nothing re-checks whether it has since been filled or withdrawn.
 - **Roles and seniority are inferred from titles**, so both carry classification error.
-- **Agency detection is keyword based** and flags only 3.9%, almost certainly an undercount.
-- **6.3% of records are rejected** by the quality rules each run and quarantined rather than silently dropped.
-- **The history table has a break at 2026-08-05.** Rows before it counted a seventh AI family for titles naming no role; rows after do not. The step in `role_count` and `ai_family_pct` is a definition change, not the market moving.
+- **A share of records are rejected** by quality rules each run and quarantined rather than silently dropped — see the "This pipeline's own error rates" panel on the site for the current rate.
+- **One aggregator is not the whole market**, and its coverage is not equally deep in all three countries. Cross-country comparisons should be read as indicative.
 
 ## Running it yourself
 
 1. Get an `app_id` and `app_key` from `developer.adzuna.com`.
-2. Create a Databricks workspace (Free Edition is enough) and run `notebooks/setup_uc.py` to create the catalog, schemas and volumes.
-3. Put credentials in the `conf` volume, outside this repo:
+2. Copy `.env.example` to `.env` and fill in `DB_PASSWORD`, `ADZUNA_APP_ID`, `ADZUNA_APP_KEY` (and optionally `TZ`). `.env` is gitignored — never commit it.
+3. `docker compose up -d --build` — this starts Postgres and the Spring Boot app, and Flyway applies all migrations automatically on boot.
+4. Trigger a run (see the `curl` commands above), or wait for the Monday 03:00 scheduled job.
+5. Open `docs/index.html` — it fetches everything it needs from `docs/data/*.json` produced by the run.
 
-```python
-pathlib.Path("/Volumes/jobs/bronze/conf/adzuna.json").write_text(
-    json.dumps({"app_id": "...", "app_key": "..."}))
-```
-
-4. Import `notebooks/` and run 01 to 06 in order.
-5. Chain them into a weekly Databricks Workflow.
+Backend tests:
 
 ```bash
-pip install -r requirements.txt && pytest tests/ -v
+cd backend && ./gradlew test
 ```
 
 ## Tech stack
 
-Databricks Free Edition, Delta Lake, Auto Loader, Unity Catalog, PySpark, Databricks Workflows, GitHub Actions and Pages, Chart.js, SQL.
+Spring Boot 3.3.5, Java 17, Gradle, Spring Data JPA, Flyway, PostgreSQL 16, Docker Compose, Chart.js.
 
 ## Licence
 
