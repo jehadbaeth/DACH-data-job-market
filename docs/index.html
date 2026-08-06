@@ -970,7 +970,7 @@ get("country_breakdown").then(d => {
       <dl>
         <dt>Median age</dt><dd>${r.median_age_days} d</dd>
         <dt>Mean age</dt><dd>${Math.round(r.avg_age_days)} d</dd>
-        <dt>Open &gt; 60 days</dt><dd>${r.pct_over_60d}%</dd>
+        <dt>Open &gt; 60 days</dt><dd>${r.pct_over60d}%</dd>
         <dt>In English</dt><dd>${r.pct_english}%</dd>
         <dt>Salary shown</dt><dd>${r.pct_with_salary ?? "–"}%</dd>
       </dl>
@@ -1007,7 +1007,7 @@ Promise.all([get("market_summary"), get("role_breakdown")])
 
   /* does the published role_breakdown carry survival columns? */
   const hasSurv = Array.isArray(rb) && rb.length &&
-                  rb[0].pct_over_30d !== undefined;
+                  rb[0].pct_over30d !== undefined;
 
   /* Weighted roll-up per role family. live() first: this picker is
      built from whatever families the JSON happens to contain, so an
@@ -1020,10 +1020,10 @@ Promise.all([get("market_summary"), get("role_breakdown")])
       { n: 0, d7: 0, d30: 0, d60: 0, d90: 0, age: 0, med: 0 };
     const w = r.n_postings || 0;
     a.n   += w;
-    a.d7  += w * (r.pct_over_7d  ?? 0);
-    a.d30 += w * (r.pct_over_30d ?? 0);
-    a.d60 += w * (r.pct_over_60d ?? 0);
-    a.d90 += w * (r.pct_over_90d ?? 0);
+    a.d7  += w * (r.pct_over7d  ?? 0);
+    a.d30 += w * (r.pct_over30d ?? 0);
+    a.d60 += w * (r.pct_over60d ?? 0);
+    a.d90 += w * (r.pct_over90d ?? 0);
     a.age += w * (r.avg_age_days ?? 0);
     a.med += w * (r.median_age_days ?? 0);
   });
@@ -1034,10 +1034,10 @@ Promise.all([get("market_summary"), get("role_breakdown")])
     if (role === ALL) return {
       pts: [
         { x: 0,  y: 100 },
-        { x: 7,  y: m.pct_over_7d },
-        { x: 30, y: m.pct_over_30d },
-        { x: 60, y: m.pct_over_60d },
-        { x: 90, y: m.pct_over_90d },
+        { x: 7,  y: m.pct_over7d },
+        { x: 30, y: m.pct_over30d },
+        { x: 60, y: m.pct_over60d },
+        { x: 90, y: m.pct_over90d },
       ],
       mean: Math.round(m.avg_age_days),
       median: m.median_age_days
@@ -1843,7 +1843,7 @@ get("agency_comparison").then(d => {
   if (!d) return;
   bar("agency", d.map(r => r.poster_type),
       [ds("Avg days open", d.map(r => r.avg_age_days), CLAY),
-       ds("% open over 60 days", d.map(r => r.pct_over_60d), TEAL)],
+       ds("% open over 60 days", d.map(r => r.pct_over60d), TEAL)],
       false, false, false,
       { x: "who posted the job",
         y: "days open (bar 1) · % over 60 days (bar 2)" });
