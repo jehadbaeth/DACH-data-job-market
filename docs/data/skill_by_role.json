@@ -1,1412 +1,892 @@
-[
- {
-  "role_family": "ai consultant",
-  "skill": "ai_agents",
-  "skill_category": "genai",
-  "n_postings": 9,
-  "role_postings": 93,
-  "pct_role_postings": 9.7,
-  "avg_age_days": 53.7,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "ai consultant",
-  "skill": "genai",
-  "skill_category": "genai",
-  "n_postings": 6,
-  "role_postings": 93,
-  "pct_role_postings": 6.5,
-  "avg_age_days": 24.7,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "ai consultant",
-  "skill": "aws",
-  "skill_category": "cloud",
-  "n_postings": 5,
-  "role_postings": 93,
-  "pct_role_postings": 5.4,
-  "avg_age_days": 7.6,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "ai consultant",
-  "skill": "llm",
-  "skill_category": "genai",
-  "n_postings": 5,
-  "role_postings": 93,
-  "pct_role_postings": 5.4,
-  "avg_age_days": 23.8,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "ai consultant",
-  "skill": "rag",
-  "skill_category": "genai",
-  "n_postings": 4,
-  "role_postings": 93,
-  "pct_role_postings": 4.3,
-  "avg_age_days": 12.0,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "ai consultant",
-  "skill": "sagemaker",
-  "skill_category": "mlops",
-  "n_postings": 3,
-  "role_postings": 93,
-  "pct_role_postings": 3.2,
-  "avg_age_days": 5.0,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "ai consultant",
-  "skill": "azure",
-  "skill_category": "cloud",
-  "n_postings": 3,
-  "role_postings": 93,
-  "pct_role_postings": 3.2,
-  "avg_age_days": 35.3,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "ai engineer",
-  "skill": "ai_agents",
-  "skill_category": "genai",
-  "n_postings": 53,
-  "role_postings": 369,
-  "pct_role_postings": 14.4,
-  "avg_age_days": 41.1,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "ai engineer",
-  "skill": "llm",
-  "skill_category": "genai",
-  "n_postings": 45,
-  "role_postings": 369,
-  "pct_role_postings": 12.2,
-  "avg_age_days": 47.1,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "ai engineer",
-  "skill": "genai",
-  "skill_category": "genai",
-  "n_postings": 29,
-  "role_postings": 369,
-  "pct_role_postings": 7.9,
-  "avg_age_days": 47.7,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "ai engineer",
-  "skill": "python",
-  "skill_category": "language",
-  "n_postings": 19,
-  "role_postings": 369,
-  "pct_role_postings": 5.1,
-  "avg_age_days": 48.4,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "ai engineer",
-  "skill": "rag",
-  "skill_category": "genai",
-  "n_postings": 15,
-  "role_postings": 369,
-  "pct_role_postings": 4.1,
-  "avg_age_days": 63.6,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "ai engineer",
-  "skill": "openai_api",
-  "skill_category": "genai",
-  "n_postings": 8,
-  "role_postings": 369,
-  "pct_role_postings": 2.2,
-  "avg_age_days": 22.8,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "ai engineer",
-  "skill": "sap",
-  "skill_category": "enterprise",
-  "n_postings": 7,
-  "role_postings": 369,
-  "pct_role_postings": 1.9,
-  "avg_age_days": 71.3,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "ai engineer",
-  "skill": "javascript",
-  "skill_category": "language",
-  "n_postings": 7,
-  "role_postings": 369,
-  "pct_role_postings": 1.9,
-  "avg_age_days": 78.3,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "ai engineer",
-  "skill": "prompting",
-  "skill_category": "genai",
-  "n_postings": 7,
-  "role_postings": 369,
-  "pct_role_postings": 1.9,
-  "avg_age_days": 55.6,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "ai engineer",
-  "skill": "kubernetes",
-  "skill_category": "devops",
-  "n_postings": 5,
-  "role_postings": 369,
-  "pct_role_postings": 1.4,
-  "avg_age_days": 5.0,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "ai engineer",
-  "skill": "docker",
-  "skill_category": "devops",
-  "n_postings": 5,
-  "role_postings": 369,
-  "pct_role_postings": 1.4,
-  "avg_age_days": 5.0,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "ai engineer",
-  "skill": "azure",
-  "skill_category": "cloud",
-  "n_postings": 5,
-  "role_postings": 369,
-  "pct_role_postings": 1.4,
-  "avg_age_days": 46.2,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "ai engineer",
-  "skill": "terraform",
-  "skill_category": "devops",
-  "n_postings": 5,
-  "role_postings": 369,
-  "pct_role_postings": 1.4,
-  "avg_age_days": 5.0,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "ai engineer",
-  "skill": "langchain",
-  "skill_category": "genai",
-  "n_postings": 4,
-  "role_postings": 369,
-  "pct_role_postings": 1.1,
-  "avg_age_days": 25.8,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "ai engineer",
-  "skill": "ai_eval",
-  "skill_category": "genai",
-  "n_postings": 4,
-  "role_postings": 369,
-  "pct_role_postings": 1.1,
-  "avg_age_days": 34.8,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "ai engineer",
-  "skill": "nlp",
-  "skill_category": "nlp_cv",
-  "n_postings": 4,
-  "role_postings": 369,
-  "pct_role_postings": 1.1,
-  "avg_age_days": 96.8,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "ai engineer",
-  "skill": "aws",
-  "skill_category": "cloud",
-  "n_postings": 4,
-  "role_postings": 369,
-  "pct_role_postings": 1.1,
-  "avg_age_days": 32.8,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "ai engineer",
-  "skill": "deeplearning",
-  "skill_category": "nlp_cv",
-  "n_postings": 3,
-  "role_postings": 369,
-  "pct_role_postings": 0.8,
-  "avg_age_days": 78.3,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "analytics engineer",
-  "skill": "snowflake",
-  "skill_category": "warehouse",
-  "n_postings": 8,
-  "role_postings": 67,
-  "pct_role_postings": 11.9,
-  "avg_age_days": 67.0,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "analytics engineer",
-  "skill": "powerbi",
-  "skill_category": "bi",
-  "n_postings": 8,
-  "role_postings": 67,
-  "pct_role_postings": 11.9,
-  "avg_age_days": 67.0,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "analytics engineer",
-  "skill": "python",
-  "skill_category": "language",
-  "n_postings": 3,
-  "role_postings": 67,
-  "pct_role_postings": 4.5,
-  "avg_age_days": 18.7,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "analytics engineer",
-  "skill": "sql",
-  "skill_category": "language",
-  "n_postings": 3,
-  "role_postings": 67,
-  "pct_role_postings": 4.5,
-  "avg_age_days": 18.7,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "bi developer",
-  "skill": "powerbi",
-  "skill_category": "bi",
-  "n_postings": 61,
-  "role_postings": 201,
-  "pct_role_postings": 30.3,
-  "avg_age_days": 41.2,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "bi developer",
-  "skill": "sap",
-  "skill_category": "enterprise",
-  "n_postings": 52,
-  "role_postings": 201,
-  "pct_role_postings": 25.9,
-  "avg_age_days": 67.6,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "bi developer",
-  "skill": "sql",
-  "skill_category": "language",
-  "n_postings": 38,
-  "role_postings": 201,
-  "pct_role_postings": 18.9,
-  "avg_age_days": 21.9,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "bi developer",
-  "skill": "azure",
-  "skill_category": "cloud",
-  "n_postings": 38,
-  "role_postings": 201,
-  "pct_role_postings": 18.9,
-  "avg_age_days": 25.1,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "bi developer",
-  "skill": "datawarehouse",
-  "skill_category": "practice",
-  "n_postings": 17,
-  "role_postings": 201,
-  "pct_role_postings": 8.5,
-  "avg_age_days": 69.1,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "bi developer",
-  "skill": "qlik",
-  "skill_category": "bi",
-  "n_postings": 4,
-  "role_postings": 201,
-  "pct_role_postings": 2.0,
-  "avg_age_days": 26.3,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data analyst",
-  "skill": "powerbi",
-  "skill_category": "bi",
-  "n_postings": 26,
-  "role_postings": 231,
-  "pct_role_postings": 11.3,
-  "avg_age_days": 64.7,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data analyst",
-  "skill": "sap",
-  "skill_category": "enterprise",
-  "n_postings": 9,
-  "role_postings": 231,
-  "pct_role_postings": 3.9,
-  "avg_age_days": 143.7,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data analyst",
-  "skill": "sql",
-  "skill_category": "language",
-  "n_postings": 7,
-  "role_postings": 231,
-  "pct_role_postings": 3.0,
-  "avg_age_days": 19.7,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data analyst",
-  "skill": "bigquery",
-  "skill_category": "warehouse",
-  "n_postings": 5,
-  "role_postings": 231,
-  "pct_role_postings": 2.2,
-  "avg_age_days": 40.0,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data analyst",
-  "skill": "azure",
-  "skill_category": "cloud",
-  "n_postings": 5,
-  "role_postings": 231,
-  "pct_role_postings": 2.2,
-  "avg_age_days": 36.0,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data analyst",
-  "skill": "etl",
-  "skill_category": "practice",
-  "n_postings": 4,
-  "role_postings": 231,
-  "pct_role_postings": 1.7,
-  "avg_age_days": 51.5,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data analyst",
-  "skill": "databricks",
-  "skill_category": "platform",
-  "n_postings": 3,
-  "role_postings": 231,
-  "pct_role_postings": 1.3,
-  "avg_age_days": 10.3,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data analyst",
-  "skill": "python",
-  "skill_category": "language",
-  "n_postings": 3,
-  "role_postings": 231,
-  "pct_role_postings": 1.3,
-  "avg_age_days": 21.3,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data architect",
-  "skill": "sap",
-  "skill_category": "enterprise",
-  "n_postings": 55,
-  "role_postings": 271,
-  "pct_role_postings": 20.3,
-  "avg_age_days": 35.1,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data architect",
-  "skill": "snowflake",
-  "skill_category": "warehouse",
-  "n_postings": 36,
-  "role_postings": 271,
-  "pct_role_postings": 13.3,
-  "avg_age_days": 44.8,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data architect",
-  "skill": "databricks",
-  "skill_category": "platform",
-  "n_postings": 7,
-  "role_postings": 271,
-  "pct_role_postings": 2.6,
-  "avg_age_days": 127.4,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data architect",
-  "skill": "datawarehouse",
-  "skill_category": "practice",
-  "n_postings": 6,
-  "role_postings": 271,
-  "pct_role_postings": 2.2,
-  "avg_age_days": 64.0,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data architect",
-  "skill": "azure",
-  "skill_category": "cloud",
-  "n_postings": 4,
-  "role_postings": 271,
-  "pct_role_postings": 1.5,
-  "avg_age_days": 12.5,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data architect",
-  "skill": "gcp",
-  "skill_category": "cloud",
-  "n_postings": 3,
-  "role_postings": 271,
-  "pct_role_postings": 1.1,
-  "avg_age_days": 51.7,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data architect",
-  "skill": "etl",
-  "skill_category": "practice",
-  "n_postings": 3,
-  "role_postings": 271,
-  "pct_role_postings": 1.1,
-  "avg_age_days": 41.7,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data consultant",
-  "skill": "sap",
-  "skill_category": "enterprise",
-  "n_postings": 17,
-  "role_postings": 141,
-  "pct_role_postings": 12.1,
-  "avg_age_days": 222.3,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data consultant",
-  "skill": "azure",
-  "skill_category": "cloud",
-  "n_postings": 8,
-  "role_postings": 141,
-  "pct_role_postings": 5.7,
-  "avg_age_days": 13.1,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data consultant",
-  "skill": "databricks",
-  "skill_category": "platform",
-  "n_postings": 5,
-  "role_postings": 141,
-  "pct_role_postings": 3.5,
-  "avg_age_days": 16.8,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data consultant",
-  "skill": "datawarehouse",
-  "skill_category": "practice",
-  "n_postings": 4,
-  "role_postings": 141,
-  "pct_role_postings": 2.8,
-  "avg_age_days": 80.0,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data consultant",
-  "skill": "oracle",
-  "skill_category": "database",
-  "n_postings": 3,
-  "role_postings": 141,
-  "pct_role_postings": 2.1,
-  "avg_age_days": 37.0,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data engineer",
-  "skill": "etl",
-  "skill_category": "practice",
-  "n_postings": 73,
-  "role_postings": 943,
-  "pct_role_postings": 7.7,
-  "avg_age_days": 29.2,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data engineer",
-  "skill": "azure",
-  "skill_category": "cloud",
-  "n_postings": 66,
-  "role_postings": 943,
-  "pct_role_postings": 7.0,
-  "avg_age_days": 66.4,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data engineer",
-  "skill": "databricks",
-  "skill_category": "platform",
-  "n_postings": 54,
-  "role_postings": 943,
-  "pct_role_postings": 5.7,
-  "avg_age_days": 48.5,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data engineer",
-  "skill": "sql",
-  "skill_category": "language",
-  "n_postings": 48,
-  "role_postings": 943,
-  "pct_role_postings": 5.1,
-  "avg_age_days": 27.7,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data engineer",
-  "skill": "python",
-  "skill_category": "language",
-  "n_postings": 48,
-  "role_postings": 943,
-  "pct_role_postings": 5.1,
-  "avg_age_days": 37.5,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data engineer",
-  "skill": "sap",
-  "skill_category": "enterprise",
-  "n_postings": 45,
-  "role_postings": 943,
-  "pct_role_postings": 4.8,
-  "avg_age_days": 35.8,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data engineer",
-  "skill": "datawarehouse",
-  "skill_category": "practice",
-  "n_postings": 38,
-  "role_postings": 943,
-  "pct_role_postings": 4.0,
-  "avg_age_days": 44.8,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data engineer",
-  "skill": "snowflake",
-  "skill_category": "warehouse",
-  "n_postings": 35,
-  "role_postings": 943,
-  "pct_role_postings": 3.7,
-  "avg_age_days": 34.3,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data engineer",
-  "skill": "aws",
-  "skill_category": "cloud",
-  "n_postings": 27,
-  "role_postings": 943,
-  "pct_role_postings": 2.9,
-  "avg_age_days": 34.0,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data engineer",
-  "skill": "spark",
-  "skill_category": "processing",
-  "n_postings": 24,
-  "role_postings": 943,
-  "pct_role_postings": 2.5,
-  "avg_age_days": 77.4,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data engineer",
-  "skill": "powerbi",
-  "skill_category": "bi",
-  "n_postings": 16,
-  "role_postings": 943,
-  "pct_role_postings": 1.7,
-  "avg_age_days": 31.8,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data engineer",
-  "skill": "gcp",
-  "skill_category": "cloud",
-  "n_postings": 14,
-  "role_postings": 943,
-  "pct_role_postings": 1.5,
-  "avg_age_days": 34.6,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data engineer",
-  "skill": "cicd",
-  "skill_category": "devops",
-  "n_postings": 13,
-  "role_postings": 943,
-  "pct_role_postings": 1.4,
-  "avg_age_days": 16.4,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data engineer",
-  "skill": "dbt",
-  "skill_category": "transform",
-  "n_postings": 13,
-  "role_postings": 943,
-  "pct_role_postings": 1.4,
-  "avg_age_days": 18.7,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data engineer",
-  "skill": "ai_agents",
-  "skill_category": "genai",
-  "n_postings": 11,
-  "role_postings": 943,
-  "pct_role_postings": 1.2,
-  "avg_age_days": 43.7,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data engineer",
-  "skill": "postgres",
-  "skill_category": "database",
-  "n_postings": 11,
-  "role_postings": 943,
-  "pct_role_postings": 1.2,
-  "avg_age_days": 22.9,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data engineer",
-  "skill": "llm",
-  "skill_category": "genai",
-  "n_postings": 10,
-  "role_postings": 943,
-  "pct_role_postings": 1.1,
-  "avg_age_days": 34.6,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data engineer",
-  "skill": "oracle",
-  "skill_category": "database",
-  "n_postings": 10,
-  "role_postings": 943,
-  "pct_role_postings": 1.1,
-  "avg_age_days": 38.3,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data engineer",
-  "skill": "genai",
-  "skill_category": "genai",
-  "n_postings": 9,
-  "role_postings": 943,
-  "pct_role_postings": 1.0,
-  "avg_age_days": 25.2,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data engineer",
-  "skill": "kubernetes",
-  "skill_category": "devops",
-  "n_postings": 8,
-  "role_postings": 943,
-  "pct_role_postings": 0.8,
-  "avg_age_days": 36.5,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data engineer",
-  "skill": "airflow",
-  "skill_category": "orchestr",
-  "n_postings": 8,
-  "role_postings": 943,
-  "pct_role_postings": 0.8,
-  "avg_age_days": 22.6,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data engineer",
-  "skill": "java",
-  "skill_category": "language",
-  "n_postings": 7,
-  "role_postings": 943,
-  "pct_role_postings": 0.7,
-  "avg_age_days": 18.0,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data engineer",
-  "skill": "terraform",
-  "skill_category": "devops",
-  "n_postings": 7,
-  "role_postings": 943,
-  "pct_role_postings": 0.7,
-  "avg_age_days": 49.0,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data engineer",
-  "skill": "kafka",
-  "skill_category": "streaming",
-  "n_postings": 7,
-  "role_postings": 943,
-  "pct_role_postings": 0.7,
-  "avg_age_days": 47.7,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data engineer",
-  "skill": "mssql",
-  "skill_category": "database",
-  "n_postings": 7,
-  "role_postings": 943,
-  "pct_role_postings": 0.7,
-  "avg_age_days": 106.9,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data engineer",
-  "skill": "docker",
-  "skill_category": "devops",
-  "n_postings": 6,
-  "role_postings": 943,
-  "pct_role_postings": 0.6,
-  "avg_age_days": 36.7,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data engineer",
-  "skill": "git",
-  "skill_category": "devops",
-  "n_postings": 5,
-  "role_postings": 943,
-  "pct_role_postings": 0.5,
-  "avg_age_days": 16.8,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data engineer",
-  "skill": "tableau",
-  "skill_category": "bi",
-  "n_postings": 4,
-  "role_postings": 943,
-  "pct_role_postings": 0.4,
-  "avg_age_days": 32.8,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data engineer",
-  "skill": "qlik",
-  "skill_category": "bi",
-  "n_postings": 4,
-  "role_postings": 943,
-  "pct_role_postings": 0.4,
-  "avg_age_days": 55.3,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data engineer",
-  "skill": "deeplearning",
-  "skill_category": "nlp_cv",
-  "n_postings": 4,
-  "role_postings": 943,
-  "pct_role_postings": 0.4,
-  "avg_age_days": 51.3,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data engineer",
-  "skill": "javascript",
-  "skill_category": "language",
-  "n_postings": 4,
-  "role_postings": 943,
-  "pct_role_postings": 0.4,
-  "avg_age_days": 45.0,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data engineer",
-  "skill": "finetuning",
-  "skill_category": "genai",
-  "n_postings": 3,
-  "role_postings": 943,
-  "pct_role_postings": 0.3,
-  "avg_age_days": 59.3,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data engineer",
-  "skill": "mysql",
-  "skill_category": "database",
-  "n_postings": 3,
-  "role_postings": 943,
-  "pct_role_postings": 0.3,
-  "avg_age_days": 18.0,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data governance",
-  "skill": "sap",
-  "skill_category": "enterprise",
-  "n_postings": 3,
-  "role_postings": 87,
-  "pct_role_postings": 3.4,
-  "avg_age_days": 64.0,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data scientist",
-  "skill": "genai",
-  "skill_category": "genai",
-  "n_postings": 13,
-  "role_postings": 393,
-  "pct_role_postings": 3.3,
-  "avg_age_days": 55.4,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data scientist",
-  "skill": "llm",
-  "skill_category": "genai",
-  "n_postings": 13,
-  "role_postings": 393,
-  "pct_role_postings": 3.3,
-  "avg_age_days": 61.1,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data scientist",
-  "skill": "sap",
-  "skill_category": "enterprise",
-  "n_postings": 10,
-  "role_postings": 393,
-  "pct_role_postings": 2.5,
-  "avg_age_days": 40.2,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data scientist",
-  "skill": "ai_agents",
-  "skill_category": "genai",
-  "n_postings": 8,
-  "role_postings": 393,
-  "pct_role_postings": 2.0,
-  "avg_age_days": 38.3,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data scientist",
-  "skill": "python",
-  "skill_category": "language",
-  "n_postings": 7,
-  "role_postings": 393,
-  "pct_role_postings": 1.8,
-  "avg_age_days": 72.4,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data scientist",
-  "skill": "sql",
-  "skill_category": "language",
-  "n_postings": 5,
-  "role_postings": 393,
-  "pct_role_postings": 1.3,
-  "avg_age_days": 59.6,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data scientist",
-  "skill": "datawarehouse",
-  "skill_category": "practice",
-  "n_postings": 4,
-  "role_postings": 393,
-  "pct_role_postings": 1.0,
-  "avg_age_days": 39.0,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data scientist",
-  "skill": "databricks",
-  "skill_category": "platform",
-  "n_postings": 4,
-  "role_postings": 393,
-  "pct_role_postings": 1.0,
-  "avg_age_days": 16.0,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data scientist",
-  "skill": "cv",
-  "skill_category": "nlp_cv",
-  "n_postings": 3,
-  "role_postings": 393,
-  "pct_role_postings": 0.8,
-  "avg_age_days": 31.0,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data scientist",
-  "skill": "r_lang",
-  "skill_category": "language",
-  "n_postings": 3,
-  "role_postings": 393,
-  "pct_role_postings": 0.8,
-  "avg_age_days": 46.0,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "data scientist",
-  "skill": "azure",
-  "skill_category": "cloud",
-  "n_postings": 3,
-  "role_postings": 393,
-  "pct_role_postings": 0.8,
-  "avg_age_days": 39.7,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "dwh / etl",
-  "skill": "datawarehouse",
-  "skill_category": "practice",
-  "n_postings": 66,
-  "role_postings": 160,
-  "pct_role_postings": 41.3,
-  "avg_age_days": 39.0,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "dwh / etl",
-  "skill": "sap",
-  "skill_category": "enterprise",
-  "n_postings": 48,
-  "role_postings": 160,
-  "pct_role_postings": 30.0,
-  "avg_age_days": 50.5,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "dwh / etl",
-  "skill": "dbt",
-  "skill_category": "transform",
-  "n_postings": 33,
-  "role_postings": 160,
-  "pct_role_postings": 20.6,
-  "avg_age_days": 24.1,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "dwh / etl",
-  "skill": "etl",
-  "skill_category": "practice",
-  "n_postings": 23,
-  "role_postings": 160,
-  "pct_role_postings": 14.4,
-  "avg_age_days": 23.7,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "dwh / etl",
-  "skill": "sql",
-  "skill_category": "language",
-  "n_postings": 6,
-  "role_postings": 160,
-  "pct_role_postings": 3.8,
-  "avg_age_days": 33.3,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "dwh / etl",
-  "skill": "azure",
-  "skill_category": "cloud",
-  "n_postings": 6,
-  "role_postings": 160,
-  "pct_role_postings": 3.8,
-  "avg_age_days": 42.0,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "dwh / etl",
-  "skill": "oracle",
-  "skill_category": "database",
-  "n_postings": 6,
-  "role_postings": 160,
-  "pct_role_postings": 3.8,
-  "avg_age_days": 70.8,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "dwh / etl",
-  "skill": "powerbi",
-  "skill_category": "bi",
-  "n_postings": 4,
-  "role_postings": 160,
-  "pct_role_postings": 2.5,
-  "avg_age_days": 10.8,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "genai / llm",
-  "skill": "genai",
-  "skill_category": "genai",
-  "n_postings": 78,
-  "role_postings": 267,
-  "pct_role_postings": 29.2,
-  "avg_age_days": 39.3,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "genai / llm",
-  "skill": "ai_agents",
-  "skill_category": "genai",
-  "n_postings": 77,
-  "role_postings": 267,
-  "pct_role_postings": 28.8,
-  "avg_age_days": 41.6,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "genai / llm",
-  "skill": "llm",
-  "skill_category": "genai",
-  "n_postings": 72,
-  "role_postings": 267,
-  "pct_role_postings": 27.0,
-  "avg_age_days": 27.8,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "genai / llm",
-  "skill": "prompting",
-  "skill_category": "genai",
-  "n_postings": 35,
-  "role_postings": 267,
-  "pct_role_postings": 13.1,
-  "avg_age_days": 15.5,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "genai / llm",
-  "skill": "rag",
-  "skill_category": "genai",
-  "n_postings": 23,
-  "role_postings": 267,
-  "pct_role_postings": 8.6,
-  "avg_age_days": 26.5,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "genai / llm",
-  "skill": "python",
-  "skill_category": "language",
-  "n_postings": 11,
-  "role_postings": 267,
-  "pct_role_postings": 4.1,
-  "avg_age_days": 23.8,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "genai / llm",
-  "skill": "aws",
-  "skill_category": "cloud",
-  "n_postings": 8,
-  "role_postings": 267,
-  "pct_role_postings": 3.0,
-  "avg_age_days": 11.1,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "genai / llm",
-  "skill": "ai_eval",
-  "skill_category": "genai",
-  "n_postings": 8,
-  "role_postings": 267,
-  "pct_role_postings": 3.0,
-  "avg_age_days": 39.6,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "genai / llm",
-  "skill": "azure",
-  "skill_category": "cloud",
-  "n_postings": 7,
-  "role_postings": 267,
-  "pct_role_postings": 2.6,
-  "avg_age_days": 52.1,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "genai / llm",
-  "skill": "javascript",
-  "skill_category": "language",
-  "n_postings": 6,
-  "role_postings": 267,
-  "pct_role_postings": 2.2,
-  "avg_age_days": 11.0,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "genai / llm",
-  "skill": "gcp",
-  "skill_category": "cloud",
-  "n_postings": 5,
-  "role_postings": 267,
-  "pct_role_postings": 1.9,
-  "avg_age_days": 9.6,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "genai / llm",
-  "skill": "openai_api",
-  "skill_category": "genai",
-  "n_postings": 4,
-  "role_postings": 267,
-  "pct_role_postings": 1.5,
-  "avg_age_days": 64.3,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "genai / llm",
-  "skill": "nlp",
-  "skill_category": "nlp_cv",
-  "n_postings": 3,
-  "role_postings": 267,
-  "pct_role_postings": 1.1,
-  "avg_age_days": 41.3,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "genai / llm",
-  "skill": "sap",
-  "skill_category": "enterprise",
-  "n_postings": 3,
-  "role_postings": 267,
-  "pct_role_postings": 1.1,
-  "avg_age_days": 47.3,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "ml engineer",
-  "skill": "cv",
-  "skill_category": "nlp_cv",
-  "n_postings": 18,
-  "role_postings": 163,
-  "pct_role_postings": 11.0,
-  "avg_age_days": 71.3,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "ml engineer",
-  "skill": "llm",
-  "skill_category": "genai",
-  "n_postings": 12,
-  "role_postings": 163,
-  "pct_role_postings": 7.4,
-  "avg_age_days": 75.4,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "ml engineer",
-  "skill": "python",
-  "skill_category": "language",
-  "n_postings": 6,
-  "role_postings": 163,
-  "pct_role_postings": 3.7,
-  "avg_age_days": 76.5,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "ml engineer",
-  "skill": "ai_agents",
-  "skill_category": "genai",
-  "n_postings": 6,
-  "role_postings": 163,
-  "pct_role_postings": 3.7,
-  "avg_age_days": 19.7,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "ml engineer",
-  "skill": "finetuning",
-  "skill_category": "genai",
-  "n_postings": 5,
-  "role_postings": 163,
-  "pct_role_postings": 3.1,
-  "avg_age_days": 15.4,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "ml engineer",
-  "skill": "deeplearning",
-  "skill_category": "nlp_cv",
-  "n_postings": 4,
-  "role_postings": 163,
-  "pct_role_postings": 2.5,
-  "avg_age_days": 26.3,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "ml engineer",
-  "skill": "genai",
-  "skill_category": "genai",
-  "n_postings": 3,
-  "role_postings": 163,
-  "pct_role_postings": 1.8,
-  "avg_age_days": 66.7,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "ml engineer",
-  "skill": "pytorch",
-  "skill_category": "ml_framework",
-  "n_postings": 3,
-  "role_postings": 163,
-  "pct_role_postings": 1.8,
-  "avg_age_days": 10.3,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "ml engineer",
-  "skill": "nlp",
-  "skill_category": "nlp_cv",
-  "n_postings": 3,
-  "role_postings": 163,
-  "pct_role_postings": 1.8,
-  "avg_age_days": 137.3,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "ml engineer",
-  "skill": "azure",
-  "skill_category": "cloud",
-  "n_postings": 3,
-  "role_postings": 163,
-  "pct_role_postings": 1.8,
-  "avg_age_days": 125.7,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "ml engineer",
-  "skill": "rag",
-  "skill_category": "genai",
-  "n_postings": 3,
-  "role_postings": 163,
-  "pct_role_postings": 1.8,
-  "avg_age_days": 12.0,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "mlops",
-  "skill": "llm",
-  "skill_category": "genai",
-  "n_postings": 26,
-  "role_postings": 111,
-  "pct_role_postings": 23.4,
-  "avg_age_days": 18.2,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "mlops",
-  "skill": "kubernetes",
-  "skill_category": "devops",
-  "n_postings": 23,
-  "role_postings": 111,
-  "pct_role_postings": 20.7,
-  "avg_age_days": 30.0,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "mlops",
-  "skill": "cicd",
-  "skill_category": "devops",
-  "n_postings": 21,
-  "role_postings": 111,
-  "pct_role_postings": 18.9,
-  "avg_age_days": 34.5,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "mlops",
-  "skill": "genai",
-  "skill_category": "genai",
-  "n_postings": 12,
-  "role_postings": 111,
-  "pct_role_postings": 10.8,
-  "avg_age_days": 63.4,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "mlops",
-  "skill": "aws",
-  "skill_category": "cloud",
-  "n_postings": 5,
-  "role_postings": 111,
-  "pct_role_postings": 4.5,
-  "avg_age_days": 49.8,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "mlops",
-  "skill": "terraform",
-  "skill_category": "devops",
-  "n_postings": 3,
-  "role_postings": 111,
-  "pct_role_postings": 2.7,
-  "avg_age_days": 6.7,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "mlops",
-  "skill": "ai_eval",
-  "skill_category": "genai",
-  "n_postings": 3,
-  "role_postings": 111,
-  "pct_role_postings": 2.7,
-  "avg_age_days": 15.3,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- },
- {
-  "role_family": "mlops",
-  "skill": "ai_agents",
-  "skill_category": "genai",
-  "n_postings": 3,
-  "role_postings": 111,
-  "pct_role_postings": 2.7,
-  "avg_age_days": 51.0,
-  "snapshot_date": "2026-08-05T00:00:00.000"
- }
-]
+[ {
+  "role_family" : "backend",
+  "skill" : "java",
+  "skill_category" : "language",
+  "n_postings" : 209,
+  "role_postings" : 2430,
+  "pct_role_postings" : 8.6,
+  "avg_age_days" : 63.9,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "backend",
+  "skill" : "dotnet",
+  "skill_category" : "framework",
+  "n_postings" : 148,
+  "role_postings" : 2430,
+  "pct_role_postings" : 6.1,
+  "avg_age_days" : 16.4,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "backend",
+  "skill" : "azure",
+  "skill_category" : "cloud",
+  "n_postings" : 122,
+  "role_postings" : 2430,
+  "pct_role_postings" : 5.0,
+  "avg_age_days" : 6.3,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "backend",
+  "skill" : "python",
+  "skill_category" : "language",
+  "n_postings" : 75,
+  "role_postings" : 2430,
+  "pct_role_postings" : 3.1,
+  "avg_age_days" : 64.0,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "backend",
+  "skill" : "c_cpp",
+  "skill_category" : "language",
+  "n_postings" : 74,
+  "role_postings" : 2430,
+  "pct_role_postings" : 3.0,
+  "avg_age_days" : 38.2,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "backend",
+  "skill" : "go",
+  "skill_category" : "language",
+  "n_postings" : 68,
+  "role_postings" : 2430,
+  "pct_role_postings" : 2.8,
+  "avg_age_days" : 53.6,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "backend",
+  "skill" : "kubernetes",
+  "skill_category" : "devops",
+  "n_postings" : 63,
+  "role_postings" : 2430,
+  "pct_role_postings" : 2.6,
+  "avg_age_days" : 34.0,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "backend",
+  "skill" : "react",
+  "skill_category" : "framework",
+  "n_postings" : 60,
+  "role_postings" : 2430,
+  "pct_role_postings" : 2.5,
+  "avg_age_days" : 19.6,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "backend",
+  "skill" : "typescript",
+  "skill_category" : "language",
+  "n_postings" : 58,
+  "role_postings" : 2430,
+  "pct_role_postings" : 2.4,
+  "avg_age_days" : 20.8,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "backend",
+  "skill" : "javascript",
+  "skill_category" : "language",
+  "n_postings" : 56,
+  "role_postings" : 2430,
+  "pct_role_postings" : 2.3,
+  "avg_age_days" : 12.8,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "backend",
+  "skill" : "cicd",
+  "skill_category" : "devops",
+  "n_postings" : 55,
+  "role_postings" : 2430,
+  "pct_role_postings" : 2.3,
+  "avg_age_days" : 27.4,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "backend",
+  "skill" : "aws",
+  "skill_category" : "cloud",
+  "n_postings" : 44,
+  "role_postings" : 2430,
+  "pct_role_postings" : 1.8,
+  "avg_age_days" : 54.2,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "backend",
+  "skill" : "git",
+  "skill_category" : "devops",
+  "n_postings" : 42,
+  "role_postings" : 2430,
+  "pct_role_postings" : 1.7,
+  "avg_age_days" : 41.8,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "backend",
+  "skill" : "angular",
+  "skill_category" : "framework",
+  "n_postings" : 38,
+  "role_postings" : 2430,
+  "pct_role_postings" : 1.6,
+  "avg_age_days" : 6.7,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "backend",
+  "skill" : "spring",
+  "skill_category" : "framework",
+  "n_postings" : 34,
+  "role_postings" : 2430,
+  "pct_role_postings" : 1.4,
+  "avg_age_days" : 79.6,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "backend",
+  "skill" : "docker",
+  "skill_category" : "devops",
+  "n_postings" : 34,
+  "role_postings" : 2430,
+  "pct_role_postings" : 1.4,
+  "avg_age_days" : 15.7,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "backend",
+  "skill" : "kotlin",
+  "skill_category" : "language",
+  "n_postings" : 33,
+  "role_postings" : 2430,
+  "pct_role_postings" : 1.4,
+  "avg_age_days" : 42.4,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "backend",
+  "skill" : "postgres",
+  "skill_category" : "database",
+  "n_postings" : 28,
+  "role_postings" : 2430,
+  "pct_role_postings" : 1.2,
+  "avg_age_days" : 41.2,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "backend",
+  "skill" : "vue",
+  "skill_category" : "framework",
+  "n_postings" : 27,
+  "role_postings" : 2430,
+  "pct_role_postings" : 1.1,
+  "avg_age_days" : 6.1,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "backend",
+  "skill" : "php",
+  "skill_category" : "language",
+  "n_postings" : 27,
+  "role_postings" : 2430,
+  "pct_role_postings" : 1.1,
+  "avg_age_days" : 43.8,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "backend",
+  "skill" : "nodejs",
+  "skill_category" : "framework",
+  "n_postings" : 17,
+  "role_postings" : 2430,
+  "pct_role_postings" : 0.7,
+  "avg_age_days" : 62.8,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "backend",
+  "skill" : "mysql",
+  "skill_category" : "database",
+  "n_postings" : 10,
+  "role_postings" : 2430,
+  "pct_role_postings" : 0.4,
+  "avg_age_days" : 13.3,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "backend",
+  "skill" : "rust",
+  "skill_category" : "language",
+  "n_postings" : 7,
+  "role_postings" : 2430,
+  "pct_role_postings" : 0.3,
+  "avg_age_days" : 32.7,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "backend",
+  "skill" : "mssql",
+  "skill_category" : "database",
+  "n_postings" : 6,
+  "role_postings" : 2430,
+  "pct_role_postings" : 0.2,
+  "avg_age_days" : 80.8,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "backend",
+  "skill" : "mongodb",
+  "skill_category" : "database",
+  "n_postings" : 6,
+  "role_postings" : 2430,
+  "pct_role_postings" : 0.2,
+  "avg_age_days" : 58.0,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "backend",
+  "skill" : "django",
+  "skill_category" : "framework",
+  "n_postings" : 5,
+  "role_postings" : 2430,
+  "pct_role_postings" : 0.2,
+  "avg_age_days" : 32.6,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "backend",
+  "skill" : "laravel",
+  "skill_category" : "framework",
+  "n_postings" : 4,
+  "role_postings" : 2430,
+  "pct_role_postings" : 0.2,
+  "avg_age_days" : 36.3,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "backend",
+  "skill" : "gcp",
+  "skill_category" : "cloud",
+  "n_postings" : 4,
+  "role_postings" : 2430,
+  "pct_role_postings" : 0.2,
+  "avg_age_days" : 33.5,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "backend",
+  "skill" : "rails",
+  "skill_category" : "framework",
+  "n_postings" : 3,
+  "role_postings" : 2430,
+  "pct_role_postings" : 0.1,
+  "avg_age_days" : 131.3,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "backend",
+  "skill" : "terraform",
+  "skill_category" : "devops",
+  "n_postings" : 3,
+  "role_postings" : 2430,
+  "pct_role_postings" : 0.1,
+  "avg_age_days" : 22.0,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "backend",
+  "skill" : "flask",
+  "skill_category" : "framework",
+  "n_postings" : 3,
+  "role_postings" : 2430,
+  "pct_role_postings" : 0.1,
+  "avg_age_days" : 18.0,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "cloud / platform",
+  "skill" : "azure",
+  "skill_category" : "cloud",
+  "n_postings" : 17,
+  "role_postings" : 72,
+  "pct_role_postings" : 23.6,
+  "avg_age_days" : 53.4,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "cloud / platform",
+  "skill" : "kubernetes",
+  "skill_category" : "devops",
+  "n_postings" : 11,
+  "role_postings" : 72,
+  "pct_role_postings" : 15.3,
+  "avg_age_days" : 20.9,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "cloud / platform",
+  "skill" : "gcp",
+  "skill_category" : "cloud",
+  "n_postings" : 9,
+  "role_postings" : 72,
+  "pct_role_postings" : 12.5,
+  "avg_age_days" : 12.6,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "cloud / platform",
+  "skill" : "aws",
+  "skill_category" : "cloud",
+  "n_postings" : 7,
+  "role_postings" : 72,
+  "pct_role_postings" : 9.7,
+  "avg_age_days" : 8.1,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "cloud / platform",
+  "skill" : "terraform",
+  "skill_category" : "devops",
+  "n_postings" : 3,
+  "role_postings" : 72,
+  "pct_role_postings" : 4.2,
+  "avg_age_days" : 27.3,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "devops / sre",
+  "skill" : "kubernetes",
+  "skill_category" : "devops",
+  "n_postings" : 136,
+  "role_postings" : 1425,
+  "pct_role_postings" : 9.5,
+  "avg_age_days" : 51.1,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "devops / sre",
+  "skill" : "cicd",
+  "skill_category" : "devops",
+  "n_postings" : 129,
+  "role_postings" : 1425,
+  "pct_role_postings" : 9.1,
+  "avg_age_days" : 61.7,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "devops / sre",
+  "skill" : "azure",
+  "skill_category" : "cloud",
+  "n_postings" : 70,
+  "role_postings" : 1425,
+  "pct_role_postings" : 4.9,
+  "avg_age_days" : 61.1,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "devops / sre",
+  "skill" : "aws",
+  "skill_category" : "cloud",
+  "n_postings" : 61,
+  "role_postings" : 1425,
+  "pct_role_postings" : 4.3,
+  "avg_age_days" : 47.3,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "devops / sre",
+  "skill" : "git",
+  "skill_category" : "devops",
+  "n_postings" : 33,
+  "role_postings" : 1425,
+  "pct_role_postings" : 2.3,
+  "avg_age_days" : 44.3,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "devops / sre",
+  "skill" : "docker",
+  "skill_category" : "devops",
+  "n_postings" : 33,
+  "role_postings" : 1425,
+  "pct_role_postings" : 2.3,
+  "avg_age_days" : 63.2,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "devops / sre",
+  "skill" : "terraform",
+  "skill_category" : "devops",
+  "n_postings" : 32,
+  "role_postings" : 1425,
+  "pct_role_postings" : 2.2,
+  "avg_age_days" : 58.3,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "devops / sre",
+  "skill" : "postgres",
+  "skill_category" : "database",
+  "n_postings" : 26,
+  "role_postings" : 1425,
+  "pct_role_postings" : 1.8,
+  "avg_age_days" : 16.0,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "devops / sre",
+  "skill" : "c_cpp",
+  "skill_category" : "language",
+  "n_postings" : 19,
+  "role_postings" : 1425,
+  "pct_role_postings" : 1.3,
+  "avg_age_days" : 54.9,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "devops / sre",
+  "skill" : "python",
+  "skill_category" : "language",
+  "n_postings" : 18,
+  "role_postings" : 1425,
+  "pct_role_postings" : 1.3,
+  "avg_age_days" : 60.8,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "devops / sre",
+  "skill" : "gcp",
+  "skill_category" : "cloud",
+  "n_postings" : 17,
+  "role_postings" : 1425,
+  "pct_role_postings" : 1.2,
+  "avg_age_days" : 23.5,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "devops / sre",
+  "skill" : "go",
+  "skill_category" : "language",
+  "n_postings" : 14,
+  "role_postings" : 1425,
+  "pct_role_postings" : 1.0,
+  "avg_age_days" : 84.4,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "devops / sre",
+  "skill" : "java",
+  "skill_category" : "language",
+  "n_postings" : 13,
+  "role_postings" : 1425,
+  "pct_role_postings" : 0.9,
+  "avg_age_days" : 138.4,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "devops / sre",
+  "skill" : "dotnet",
+  "skill_category" : "framework",
+  "n_postings" : 8,
+  "role_postings" : 1425,
+  "pct_role_postings" : 0.6,
+  "avg_age_days" : 32.4,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "devops / sre",
+  "skill" : "react",
+  "skill_category" : "framework",
+  "n_postings" : 4,
+  "role_postings" : 1425,
+  "pct_role_postings" : 0.3,
+  "avg_age_days" : 144.3,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "devops / sre",
+  "skill" : "typescript",
+  "skill_category" : "language",
+  "n_postings" : 4,
+  "role_postings" : 1425,
+  "pct_role_postings" : 0.3,
+  "avg_age_days" : 21.0,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "embedded",
+  "skill" : "c_cpp",
+  "skill_category" : "language",
+  "n_postings" : 49,
+  "role_postings" : 152,
+  "pct_role_postings" : 32.2,
+  "avg_age_days" : 30.1,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "embedded",
+  "skill" : "rust",
+  "skill_category" : "language",
+  "n_postings" : 7,
+  "role_postings" : 152,
+  "pct_role_postings" : 4.6,
+  "avg_age_days" : 15.6,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "embedded",
+  "skill" : "cicd",
+  "skill_category" : "devops",
+  "n_postings" : 5,
+  "role_postings" : 152,
+  "pct_role_postings" : 3.3,
+  "avg_age_days" : 44.2,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "embedded",
+  "skill" : "python",
+  "skill_category" : "language",
+  "n_postings" : 4,
+  "role_postings" : 152,
+  "pct_role_postings" : 2.6,
+  "avg_age_days" : 25.5,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "embedded",
+  "skill" : "git",
+  "skill_category" : "devops",
+  "n_postings" : 3,
+  "role_postings" : 152,
+  "pct_role_postings" : 2.0,
+  "avg_age_days" : 10.3,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "frontend",
+  "skill" : "react",
+  "skill_category" : "framework",
+  "n_postings" : 33,
+  "role_postings" : 309,
+  "pct_role_postings" : 10.7,
+  "avg_age_days" : 43.4,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "frontend",
+  "skill" : "javascript",
+  "skill_category" : "language",
+  "n_postings" : 29,
+  "role_postings" : 309,
+  "pct_role_postings" : 9.4,
+  "avg_age_days" : 38.3,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "frontend",
+  "skill" : "vue",
+  "skill_category" : "framework",
+  "n_postings" : 22,
+  "role_postings" : 309,
+  "pct_role_postings" : 7.1,
+  "avg_age_days" : 37.5,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "frontend",
+  "skill" : "typescript",
+  "skill_category" : "language",
+  "n_postings" : 19,
+  "role_postings" : 309,
+  "pct_role_postings" : 6.1,
+  "avg_age_days" : 63.6,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "frontend",
+  "skill" : "angular",
+  "skill_category" : "framework",
+  "n_postings" : 15,
+  "role_postings" : 309,
+  "pct_role_postings" : 4.9,
+  "avg_age_days" : 74.9,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "frontend",
+  "skill" : "java",
+  "skill_category" : "language",
+  "n_postings" : 9,
+  "role_postings" : 309,
+  "pct_role_postings" : 2.9,
+  "avg_age_days" : 53.6,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "frontend",
+  "skill" : "nodejs",
+  "skill_category" : "framework",
+  "n_postings" : 8,
+  "role_postings" : 309,
+  "pct_role_postings" : 2.6,
+  "avg_age_days" : 22.0,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "frontend",
+  "skill" : "git",
+  "skill_category" : "devops",
+  "n_postings" : 6,
+  "role_postings" : 309,
+  "pct_role_postings" : 1.9,
+  "avg_age_days" : 32.0,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "frontend",
+  "skill" : "php",
+  "skill_category" : "language",
+  "n_postings" : 4,
+  "role_postings" : 309,
+  "pct_role_postings" : 1.3,
+  "avg_age_days" : 18.0,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "frontend",
+  "skill" : "spring",
+  "skill_category" : "framework",
+  "n_postings" : 3,
+  "role_postings" : 309,
+  "pct_role_postings" : 1.0,
+  "avg_age_days" : 34.3,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "frontend",
+  "skill" : "kotlin",
+  "skill_category" : "language",
+  "n_postings" : 3,
+  "role_postings" : 309,
+  "pct_role_postings" : 1.0,
+  "avg_age_days" : 47.0,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "fullstack",
+  "skill" : "java",
+  "skill_category" : "language",
+  "n_postings" : 76,
+  "role_postings" : 705,
+  "pct_role_postings" : 10.8,
+  "avg_age_days" : 67.5,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "fullstack",
+  "skill" : "typescript",
+  "skill_category" : "language",
+  "n_postings" : 52,
+  "role_postings" : 705,
+  "pct_role_postings" : 7.4,
+  "avg_age_days" : 40.8,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "fullstack",
+  "skill" : "react",
+  "skill_category" : "framework",
+  "n_postings" : 50,
+  "role_postings" : 705,
+  "pct_role_postings" : 7.1,
+  "avg_age_days" : 28.3,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "fullstack",
+  "skill" : "dotnet",
+  "skill_category" : "framework",
+  "n_postings" : 33,
+  "role_postings" : 705,
+  "pct_role_postings" : 4.7,
+  "avg_age_days" : 39.1,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "fullstack",
+  "skill" : "javascript",
+  "skill_category" : "language",
+  "n_postings" : 31,
+  "role_postings" : 705,
+  "pct_role_postings" : 4.4,
+  "avg_age_days" : 51.1,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "fullstack",
+  "skill" : "angular",
+  "skill_category" : "framework",
+  "n_postings" : 29,
+  "role_postings" : 705,
+  "pct_role_postings" : 4.1,
+  "avg_age_days" : 37.8,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "fullstack",
+  "skill" : "python",
+  "skill_category" : "language",
+  "n_postings" : 28,
+  "role_postings" : 705,
+  "pct_role_postings" : 4.0,
+  "avg_age_days" : 74.0,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "fullstack",
+  "skill" : "php",
+  "skill_category" : "language",
+  "n_postings" : 14,
+  "role_postings" : 705,
+  "pct_role_postings" : 2.0,
+  "avg_age_days" : 58.0,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "fullstack",
+  "skill" : "spring",
+  "skill_category" : "framework",
+  "n_postings" : 13,
+  "role_postings" : 705,
+  "pct_role_postings" : 1.8,
+  "avg_age_days" : 77.7,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "fullstack",
+  "skill" : "vue",
+  "skill_category" : "framework",
+  "n_postings" : 13,
+  "role_postings" : 705,
+  "pct_role_postings" : 1.8,
+  "avg_age_days" : 56.5,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "fullstack",
+  "skill" : "nodejs",
+  "skill_category" : "framework",
+  "n_postings" : 12,
+  "role_postings" : 705,
+  "pct_role_postings" : 1.7,
+  "avg_age_days" : 40.5,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "fullstack",
+  "skill" : "postgres",
+  "skill_category" : "database",
+  "n_postings" : 10,
+  "role_postings" : 705,
+  "pct_role_postings" : 1.4,
+  "avg_age_days" : 62.3,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "fullstack",
+  "skill" : "azure",
+  "skill_category" : "cloud",
+  "n_postings" : 9,
+  "role_postings" : 705,
+  "pct_role_postings" : 1.3,
+  "avg_age_days" : 33.0,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "fullstack",
+  "skill" : "go",
+  "skill_category" : "language",
+  "n_postings" : 9,
+  "role_postings" : 705,
+  "pct_role_postings" : 1.3,
+  "avg_age_days" : 34.0,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "fullstack",
+  "skill" : "c_cpp",
+  "skill_category" : "language",
+  "n_postings" : 7,
+  "role_postings" : 705,
+  "pct_role_postings" : 1.0,
+  "avg_age_days" : 172.4,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "fullstack",
+  "skill" : "mysql",
+  "skill_category" : "database",
+  "n_postings" : 7,
+  "role_postings" : 705,
+  "pct_role_postings" : 1.0,
+  "avg_age_days" : 86.0,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "fullstack",
+  "skill" : "docker",
+  "skill_category" : "devops",
+  "n_postings" : 7,
+  "role_postings" : 705,
+  "pct_role_postings" : 1.0,
+  "avg_age_days" : 38.9,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "fullstack",
+  "skill" : "cicd",
+  "skill_category" : "devops",
+  "n_postings" : 7,
+  "role_postings" : 705,
+  "pct_role_postings" : 1.0,
+  "avg_age_days" : 45.6,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "fullstack",
+  "skill" : "kotlin",
+  "skill_category" : "language",
+  "n_postings" : 6,
+  "role_postings" : 705,
+  "pct_role_postings" : 0.9,
+  "avg_age_days" : 134.0,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "fullstack",
+  "skill" : "rust",
+  "skill_category" : "language",
+  "n_postings" : 5,
+  "role_postings" : 705,
+  "pct_role_postings" : 0.7,
+  "avg_age_days" : 22.2,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "fullstack",
+  "skill" : "aws",
+  "skill_category" : "cloud",
+  "n_postings" : 4,
+  "role_postings" : 705,
+  "pct_role_postings" : 0.6,
+  "avg_age_days" : 205.3,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "fullstack",
+  "skill" : "kubernetes",
+  "skill_category" : "devops",
+  "n_postings" : 4,
+  "role_postings" : 705,
+  "pct_role_postings" : 0.6,
+  "avg_age_days" : 55.5,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "fullstack",
+  "skill" : "django",
+  "skill_category" : "framework",
+  "n_postings" : 3,
+  "role_postings" : 705,
+  "pct_role_postings" : 0.4,
+  "avg_age_days" : 126.7,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "fullstack",
+  "skill" : "gcp",
+  "skill_category" : "cloud",
+  "n_postings" : 3,
+  "role_postings" : 705,
+  "pct_role_postings" : 0.4,
+  "avg_age_days" : 28.3,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "mobile",
+  "skill" : "swift",
+  "skill_category" : "language",
+  "n_postings" : 9,
+  "role_postings" : 128,
+  "pct_role_postings" : 7.0,
+  "avg_age_days" : 224.7,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "mobile",
+  "skill" : "react",
+  "skill_category" : "framework",
+  "n_postings" : 9,
+  "role_postings" : 128,
+  "pct_role_postings" : 7.0,
+  "avg_age_days" : 114.8,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "mobile",
+  "skill" : "kotlin",
+  "skill_category" : "language",
+  "n_postings" : 8,
+  "role_postings" : 128,
+  "pct_role_postings" : 6.3,
+  "avg_age_days" : 75.5,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "mobile",
+  "skill" : "c_cpp",
+  "skill_category" : "language",
+  "n_postings" : 3,
+  "role_postings" : 128,
+  "pct_role_postings" : 2.3,
+  "avg_age_days" : 537.7,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "qa / test",
+  "skill" : "python",
+  "skill_category" : "language",
+  "n_postings" : 6,
+  "role_postings" : 136,
+  "pct_role_postings" : 4.4,
+  "avg_age_days" : 18.7,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "qa / test",
+  "skill" : "cicd",
+  "skill_category" : "devops",
+  "n_postings" : 4,
+  "role_postings" : 136,
+  "pct_role_postings" : 2.9,
+  "avg_age_days" : 35.5,
+  "snapshot_date" : "2026-08-06"
+}, {
+  "role_family" : "qa / test",
+  "skill" : "java",
+  "skill_category" : "language",
+  "n_postings" : 3,
+  "role_postings" : 136,
+  "pct_role_postings" : 2.2,
+  "avg_age_days" : 11.7,
+  "snapshot_date" : "2026-08-06"
+} ]

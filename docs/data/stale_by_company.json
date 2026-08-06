@@ -1,482 +1,421 @@
-[
- {
-  "company": "Rüdiger Mohne",
-  "is_agency": false,
-  "n_postings": 5,
-  "avg_age_days": 235.6,
-  "oldest_days": 242,
-  "pct_over_60d": 100.0
- },
- {
-  "company": "ISR Information Products AG",
-  "is_agency": false,
-  "n_postings": 69,
-  "avg_age_days": 196.1,
-  "oldest_days": 253,
-  "pct_over_60d": 85.5
- },
- {
-  "company": "Fresenius Medical Care",
-  "is_agency": false,
-  "n_postings": 14,
-  "avg_age_days": 194.7,
-  "oldest_days": 235,
-  "pct_over_60d": 100.0
- },
- {
-  "company": "netgo group GmbH",
-  "is_agency": false,
-  "n_postings": 7,
-  "avg_age_days": 185.7,
-  "oldest_days": 210,
-  "pct_over_60d": 100.0
- },
- {
-  "company": "wynwood tech",
-  "is_agency": false,
-  "n_postings": 9,
-  "avg_age_days": 156.8,
-  "oldest_days": 344,
-  "pct_over_60d": 77.8
- },
- {
-  "company": "Qualysoft",
-  "is_agency": false,
-  "n_postings": 6,
-  "avg_age_days": 153.8,
-  "oldest_days": 187,
-  "pct_over_60d": 83.3
- },
- {
-  "company": "Comma Soft AG",
-  "is_agency": false,
-  "n_postings": 9,
-  "avg_age_days": 150.7,
-  "oldest_days": 300,
-  "pct_over_60d": 88.9
- },
- {
-  "company": "Statista",
-  "is_agency": false,
-  "n_postings": 6,
-  "avg_age_days": 149.5,
-  "oldest_days": 259,
-  "pct_over_60d": 66.7
- },
- {
-  "company": "Generali Deutschland AG",
-  "is_agency": false,
-  "n_postings": 6,
-  "avg_age_days": 133.3,
-  "oldest_days": 287,
-  "pct_over_60d": 50.0
- },
- {
-  "company": "Almedia",
-  "is_agency": false,
-  "n_postings": 5,
-  "avg_age_days": 122.6,
-  "oldest_days": 237,
-  "pct_over_60d": 60.0
- },
- {
-  "company": "in-tech GmbH",
-  "is_agency": false,
-  "n_postings": 5,
-  "avg_age_days": 116.8,
-  "oldest_days": 166,
-  "pct_over_60d": 60.0
- },
- {
-  "company": "Air Apps",
-  "is_agency": false,
-  "n_postings": 8,
-  "avg_age_days": 103.8,
-  "oldest_days": 110,
-  "pct_over_60d": 100.0
- },
- {
-  "company": "Deichmann",
-  "is_agency": false,
-  "n_postings": 13,
-  "avg_age_days": 103.0,
-  "oldest_days": 266,
-  "pct_over_60d": 46.2
- },
- {
-  "company": "Sopra-Steria",
-  "is_agency": false,
-  "n_postings": 10,
-  "avg_age_days": 98.1,
-  "oldest_days": 194,
-  "pct_over_60d": 80.0
- },
- {
-  "company": "FERCHAU GmbH",
-  "is_agency": false,
-  "n_postings": 12,
-  "avg_age_days": 97.6,
-  "oldest_days": 231,
-  "pct_over_60d": 41.7
- },
- {
-  "company": "KPMG",
-  "is_agency": false,
-  "n_postings": 84,
-  "avg_age_days": 96.5,
-  "oldest_days": 263,
-  "pct_over_60d": 52.4
- },
- {
-  "company": "Eraneos",
-  "is_agency": false,
-  "n_postings": 7,
-  "avg_age_days": 95.0,
-  "oldest_days": 308,
-  "pct_over_60d": 71.4
- },
- {
-  "company": "CompuGroup Medical",
-  "is_agency": false,
-  "n_postings": 8,
-  "avg_age_days": 94.4,
-  "oldest_days": 289,
-  "pct_over_60d": 75.0
- },
- {
-  "company": "Thoughtworks",
-  "is_agency": false,
-  "n_postings": 6,
-  "avg_age_days": 92.3,
-  "oldest_days": 116,
-  "pct_over_60d": 100.0
- },
- {
-  "company": "Obungi GmbH",
-  "is_agency": false,
-  "n_postings": 12,
-  "avg_age_days": 89.2,
-  "oldest_days": 190,
-  "pct_over_60d": 75.0
- },
- {
-  "company": "DACHSER SE",
-  "is_agency": false,
-  "n_postings": 6,
-  "avg_age_days": 89.0,
-  "oldest_days": 153,
-  "pct_over_60d": 50.0
- },
- {
-  "company": "TARGOBANK",
-  "is_agency": false,
-  "n_postings": 12,
-  "avg_age_days": 88.6,
-  "oldest_days": 155,
-  "pct_over_60d": 83.3
- },
- {
-  "company": "NTT America, Inc.",
-  "is_agency": false,
-  "n_postings": 44,
-  "avg_age_days": 88.5,
-  "oldest_days": 89,
-  "pct_over_60d": 100.0
- },
- {
-  "company": "A11",
-  "is_agency": false,
-  "n_postings": 7,
-  "avg_age_days": 86.7,
-  "oldest_days": 348,
-  "pct_over_60d": 28.6
- },
- {
-  "company": "MID",
-  "is_agency": false,
-  "n_postings": 5,
-  "avg_age_days": 85.0,
-  "oldest_days": 85,
-  "pct_over_60d": 100.0
- },
- {
-  "company": "integration-factory & Co. KG",
-  "is_agency": false,
-  "n_postings": 5,
-  "avg_age_days": 85.0,
-  "oldest_days": 85,
-  "pct_over_60d": 100.0
- },
- {
-  "company": "MaibornWolff Career",
-  "is_agency": false,
-  "n_postings": 8,
-  "avg_age_days": 85.0,
-  "oldest_days": 85,
-  "pct_over_60d": 100.0
- },
- {
-  "company": "statworx",
-  "is_agency": false,
-  "n_postings": 7,
-  "avg_age_days": 85.0,
-  "oldest_days": 85,
-  "pct_over_60d": 100.0
- },
- {
-  "company": "taod Consulting",
-  "is_agency": true,
-  "n_postings": 5,
-  "avg_age_days": 85.0,
-  "oldest_days": 85,
-  "pct_over_60d": 100.0
- },
- {
-  "company": "Woodmark Consulting",
-  "is_agency": true,
-  "n_postings": 7,
-  "avg_age_days": 85.0,
-  "oldest_days": 85,
-  "pct_over_60d": 100.0
- },
- {
-  "company": "FERCHAU Austria GmbH",
-  "is_agency": false,
-  "n_postings": 5,
-  "avg_age_days": 83.6,
-  "oldest_days": 267,
-  "pct_over_60d": 20.0
- },
- {
-  "company": "CGI",
-  "is_agency": false,
-  "n_postings": 25,
-  "avg_age_days": 82.1,
-  "oldest_days": 230,
-  "pct_over_60d": 44.0
- },
- {
-  "company": "ELCA",
-  "is_agency": false,
-  "n_postings": 7,
-  "avg_age_days": 82.0,
-  "oldest_days": 230,
-  "pct_over_60d": 42.9
- },
- {
-  "company": "Avomind",
-  "is_agency": false,
-  "n_postings": 6,
-  "avg_age_days": 81.0,
-  "oldest_days": 167,
-  "pct_over_60d": 33.3
- },
- {
-  "company": "Visium SA",
-  "is_agency": false,
-  "n_postings": 6,
-  "avg_age_days": 80.7,
-  "oldest_days": 143,
-  "pct_over_60d": 66.7
- },
- {
-  "company": "OMMAX",
-  "is_agency": false,
-  "n_postings": 11,
-  "avg_age_days": 80.4,
-  "oldest_days": 85,
-  "pct_over_60d": 90.9
- },
- {
-  "company": "Unit8 SA",
-  "is_agency": false,
-  "n_postings": 5,
-  "avg_age_days": 77.2,
-  "oldest_days": 184,
-  "pct_over_60d": 40.0
- },
- {
-  "company": "ARTS",
-  "is_agency": false,
-  "n_postings": 5,
-  "avg_age_days": 75.2,
-  "oldest_days": 117,
-  "pct_over_60d": 80.0
- },
- {
-  "company": "Schwarz Digits",
-  "is_agency": false,
-  "n_postings": 21,
-  "avg_age_days": 73.6,
-  "oldest_days": 272,
-  "pct_over_60d": 33.3
- },
- {
-  "company": "SAP",
-  "is_agency": false,
-  "n_postings": 14,
-  "avg_age_days": 70.4,
-  "oldest_days": 231,
-  "pct_over_60d": 50.0
- },
- {
-  "company": "aquitas GmbH",
-  "is_agency": false,
-  "n_postings": 10,
-  "avg_age_days": 66.2,
-  "oldest_days": 142,
-  "pct_over_60d": 50.0
- },
- {
-  "company": "KNAPP",
-  "is_agency": false,
-  "n_postings": 5,
-  "avg_age_days": 66.0,
-  "oldest_days": 89,
-  "pct_over_60d": 60.0
- },
- {
-  "company": "Agile Robots SE",
-  "is_agency": false,
-  "n_postings": 14,
-  "avg_age_days": 61.8,
-  "oldest_days": 155,
-  "pct_over_60d": 50.0
- },
- {
-  "company": "Deichmann SE",
-  "is_agency": false,
-  "n_postings": 17,
-  "avg_age_days": 60.9,
-  "oldest_days": 179,
-  "pct_over_60d": 29.4
- },
- {
-  "company": "Value AG",
-  "is_agency": false,
-  "n_postings": 12,
-  "avg_age_days": 57.8,
-  "oldest_days": 67,
-  "pct_over_60d": 58.3
- },
- {
-  "company": "Deutsche Bank",
-  "is_agency": false,
-  "n_postings": 5,
-  "avg_age_days": 54.8,
-  "oldest_days": 153,
-  "pct_over_60d": 40.0
- },
- {
-  "company": "HUK-COBURG",
-  "is_agency": false,
-  "n_postings": 8,
-  "avg_age_days": 54.1,
-  "oldest_days": 71,
-  "pct_over_60d": 62.5
- },
- {
-  "company": "Dynatrace",
-  "is_agency": false,
-  "n_postings": 5,
-  "avg_age_days": 52.2,
-  "oldest_days": 53,
-  "pct_over_60d": 0.0
- },
- {
-  "company": "Avanade",
-  "is_agency": false,
-  "n_postings": 6,
-  "avg_age_days": 49.3,
-  "oldest_days": 97,
-  "pct_over_60d": 33.3
- },
- {
-  "company": "Just Eat",
-  "is_agency": false,
-  "n_postings": 5,
-  "avg_age_days": 48.4,
-  "oldest_days": 83,
-  "pct_over_60d": 40.0
- },
- {
-  "company": "Neura Robotics",
-  "is_agency": false,
-  "n_postings": 12,
-  "avg_age_days": 48.3,
-  "oldest_days": 63,
-  "pct_over_60d": 50.0
- },
- {
-  "company": "Avanade Inc.",
-  "is_agency": false,
-  "n_postings": 15,
-  "avg_age_days": 47.3,
-  "oldest_days": 229,
-  "pct_over_60d": 20.0
- },
- {
-  "company": "appliedAI",
-  "is_agency": false,
-  "n_postings": 6,
-  "avg_age_days": 45.0,
-  "oldest_days": 85,
-  "pct_over_60d": 33.3
- },
- {
-  "company": "Zalando",
-  "is_agency": false,
-  "n_postings": 9,
-  "avg_age_days": 43.7,
-  "oldest_days": 73,
-  "pct_over_60d": 33.3
- },
- {
-  "company": "Red Bull",
-  "is_agency": false,
-  "n_postings": 5,
-  "avg_age_days": 41.0,
-  "oldest_days": 89,
-  "pct_over_60d": 20.0
- },
- {
-  "company": "Simon-Kucher & Partners",
-  "is_agency": false,
-  "n_postings": 14,
-  "avg_age_days": 40.3,
-  "oldest_days": 77,
-  "pct_over_60d": 14.3
- },
- {
-  "company": "Alexander Thamm GmbH",
-  "is_agency": false,
-  "n_postings": 12,
-  "avg_age_days": 39.1,
-  "oldest_days": 126,
-  "pct_over_60d": 16.7
- },
- {
-  "company": "The Quality Group",
-  "is_agency": false,
-  "n_postings": 10,
-  "avg_age_days": 38.2,
-  "oldest_days": 110,
-  "pct_over_60d": 20.0
- },
- {
-  "company": "Google",
-  "is_agency": false,
-  "n_postings": 12,
-  "avg_age_days": 36.7,
-  "oldest_days": 66,
-  "pct_over_60d": 33.3
- },
- {
-  "company": "Amazon",
-  "is_agency": false,
-  "n_postings": 7,
-  "avg_age_days": 35.9,
-  "oldest_days": 67,
-  "pct_over_60d": 28.6
- }
-]
+[ {
+  "company" : "Astriol academics GmbH",
+  "is_agency" : false,
+  "n_postings" : 88,
+  "avg_age_days" : 545.9,
+  "oldest_days" : 562,
+  "pct_over60d" : 100.0
+}, {
+  "company" : "Akka Technologies",
+  "is_agency" : false,
+  "n_postings" : 5,
+  "avg_age_days" : 528.0,
+  "oldest_days" : 528,
+  "pct_over60d" : 100.0
+}, {
+  "company" : "Rüdiger Mohne",
+  "is_agency" : false,
+  "n_postings" : 9,
+  "avg_age_days" : 392.6,
+  "oldest_days" : 737,
+  "pct_over60d" : 100.0
+}, {
+  "company" : "Lübbers SLP",
+  "is_agency" : false,
+  "n_postings" : 5,
+  "avg_age_days" : 379.4,
+  "oldest_days" : 737,
+  "pct_over60d" : 80.0
+}, {
+  "company" : "YourCode",
+  "is_agency" : false,
+  "n_postings" : 7,
+  "avg_age_days" : 371.0,
+  "oldest_days" : 371,
+  "pct_over60d" : 100.0
+}, {
+  "company" : "Hirefive",
+  "is_agency" : false,
+  "n_postings" : 5,
+  "avg_age_days" : 371.0,
+  "oldest_days" : 371,
+  "pct_over60d" : 100.0
+}, {
+  "company" : "TechConnect",
+  "is_agency" : false,
+  "n_postings" : 7,
+  "avg_age_days" : 371.0,
+  "oldest_days" : 371,
+  "pct_over60d" : 100.0
+}, {
+  "company" : "Faszination",
+  "is_agency" : false,
+  "n_postings" : 6,
+  "avg_age_days" : 353.7,
+  "oldest_days" : 636,
+  "pct_over60d" : 100.0
+}, {
+  "company" : "FERCHAU GmbH",
+  "is_agency" : false,
+  "n_postings" : 41,
+  "avg_age_days" : 336.2,
+  "oldest_days" : 948,
+  "pct_over60d" : 73.2
+}, {
+  "company" : "eurofunk KAPPACHER GmbH",
+  "is_agency" : false,
+  "n_postings" : 6,
+  "avg_age_days" : 323.3,
+  "oldest_days" : 342,
+  "pct_over60d" : 100.0
+}, {
+  "company" : "KIND GmbH & Co. KG",
+  "is_agency" : false,
+  "n_postings" : 11,
+  "avg_age_days" : 276.1,
+  "oldest_days" : 393,
+  "pct_over60d" : 81.8
+}, {
+  "company" : "Bundesdruckerei",
+  "is_agency" : false,
+  "n_postings" : 14,
+  "avg_age_days" : 245.3,
+  "oldest_days" : 737,
+  "pct_over60d" : 64.3
+}, {
+  "company" : "jobvalley",
+  "is_agency" : false,
+  "n_postings" : 9,
+  "avg_age_days" : 225.9,
+  "oldest_days" : 309,
+  "pct_over60d" : 88.9
+}, {
+  "company" : "Helsing",
+  "is_agency" : false,
+  "n_postings" : 6,
+  "avg_age_days" : 225.2,
+  "oldest_days" : 227,
+  "pct_over60d" : 100.0
+}, {
+  "company" : "wynwood tech",
+  "is_agency" : false,
+  "n_postings" : 18,
+  "avg_age_days" : 212.2,
+  "oldest_days" : 371,
+  "pct_over60d" : 88.9
+}, {
+  "company" : "Qualysoft",
+  "is_agency" : false,
+  "n_postings" : 7,
+  "avg_age_days" : 193.4,
+  "oldest_days" : 351,
+  "pct_over60d" : 71.4
+}, {
+  "company" : "Talon.One",
+  "is_agency" : false,
+  "n_postings" : 7,
+  "avg_age_days" : 191.4,
+  "oldest_days" : 603,
+  "pct_over60d" : 28.6
+}, {
+  "company" : "FERCHAU Austria GmbH",
+  "is_agency" : false,
+  "n_postings" : 6,
+  "avg_age_days" : 189.8,
+  "oldest_days" : 531,
+  "pct_over60d" : 83.3
+}, {
+  "company" : "netgo group GmbH",
+  "is_agency" : false,
+  "n_postings" : 7,
+  "avg_age_days" : 186.7,
+  "oldest_days" : 211,
+  "pct_over60d" : 100.0
+}, {
+  "company" : "Guldberg",
+  "is_agency" : false,
+  "n_postings" : 5,
+  "avg_age_days" : 185.4,
+  "oldest_days" : 243,
+  "pct_over60d" : 100.0
+}, {
+  "company" : "SAP Fioneer",
+  "is_agency" : false,
+  "n_postings" : 6,
+  "avg_age_days" : 161.7,
+  "oldest_days" : 244,
+  "pct_over60d" : 83.3
+}, {
+  "company" : "Avelios Medical",
+  "is_agency" : false,
+  "n_postings" : 7,
+  "avg_age_days" : 159.7,
+  "oldest_days" : 169,
+  "pct_over60d" : 100.0
+}, {
+  "company" : "MWAY DIGITAL GmbH",
+  "is_agency" : false,
+  "n_postings" : 5,
+  "avg_age_days" : 138.8,
+  "oldest_days" : 436,
+  "pct_over60d" : 40.0
+}, {
+  "company" : "ClickHouse",
+  "is_agency" : false,
+  "n_postings" : 8,
+  "avg_age_days" : 137.1,
+  "oldest_days" : 388,
+  "pct_over60d" : 62.5
+}, {
+  "company" : "Sopra-Steria",
+  "is_agency" : false,
+  "n_postings" : 7,
+  "avg_age_days" : 129.6,
+  "oldest_days" : 149,
+  "pct_over60d" : 100.0
+}, {
+  "company" : "Zalando",
+  "is_agency" : false,
+  "n_postings" : 7,
+  "avg_age_days" : 124.1,
+  "oldest_days" : 410,
+  "pct_over60d" : 28.6
+}, {
+  "company" : "CGI",
+  "is_agency" : false,
+  "n_postings" : 12,
+  "avg_age_days" : 120.3,
+  "oldest_days" : 230,
+  "pct_over60d" : 75.0
+}, {
+  "company" : "Maurer Electronics",
+  "is_agency" : false,
+  "n_postings" : 6,
+  "avg_age_days" : 118.5,
+  "oldest_days" : 133,
+  "pct_over60d" : 83.3
+}, {
+  "company" : "Databricks",
+  "is_agency" : false,
+  "n_postings" : 6,
+  "avg_age_days" : 117.0,
+  "oldest_days" : 117,
+  "pct_over60d" : 100.0
+}, {
+  "company" : "Expleo",
+  "is_agency" : false,
+  "n_postings" : 9,
+  "avg_age_days" : 114.8,
+  "oldest_days" : 210,
+  "pct_over60d" : 88.9
+}, {
+  "company" : "ELCA",
+  "is_agency" : false,
+  "n_postings" : 8,
+  "avg_age_days" : 114.1,
+  "oldest_days" : 406,
+  "pct_over60d" : 50.0
+}, {
+  "company" : "Snowflake",
+  "is_agency" : false,
+  "n_postings" : 6,
+  "avg_age_days" : 106.3,
+  "oldest_days" : 311,
+  "pct_over60d" : 50.0
+}, {
+  "company" : "avenit AG",
+  "is_agency" : false,
+  "n_postings" : 6,
+  "avg_age_days" : 101.0,
+  "oldest_days" : 322,
+  "pct_over60d" : 50.0
+}, {
+  "company" : "Air Apps",
+  "is_agency" : false,
+  "n_postings" : 11,
+  "avg_age_days" : 99.1,
+  "oldest_days" : 111,
+  "pct_over60d" : 100.0
+}, {
+  "company" : "AKDB",
+  "is_agency" : false,
+  "n_postings" : 5,
+  "avg_age_days" : 95.2,
+  "oldest_days" : 174,
+  "pct_over60d" : 60.0
+}, {
+  "company" : "smartclip Europe GmbH",
+  "is_agency" : false,
+  "n_postings" : 10,
+  "avg_age_days" : 93.5,
+  "oldest_days" : 316,
+  "pct_over60d" : 50.0
+}, {
+  "company" : "Bitpanda",
+  "is_agency" : false,
+  "n_postings" : 7,
+  "avg_age_days" : 87.9,
+  "oldest_days" : 240,
+  "pct_over60d" : 57.1
+}, {
+  "company" : "Forvis Mazars",
+  "is_agency" : false,
+  "n_postings" : 6,
+  "avg_age_days" : 86.7,
+  "oldest_days" : 104,
+  "pct_over60d" : 83.3
+}, {
+  "company" : "Swarco AG",
+  "is_agency" : false,
+  "n_postings" : 5,
+  "avg_age_days" : 86.0,
+  "oldest_days" : 134,
+  "pct_over60d" : 80.0
+}, {
+  "company" : "global CT",
+  "is_agency" : false,
+  "n_postings" : 6,
+  "avg_age_days" : 86.0,
+  "oldest_days" : 86,
+  "pct_over60d" : 100.0
+}, {
+  "company" : "workidentity GmbH",
+  "is_agency" : false,
+  "n_postings" : 6,
+  "avg_age_days" : 86.0,
+  "oldest_days" : 275,
+  "pct_over60d" : 16.7
+}, {
+  "company" : "MaibornWolff Career",
+  "is_agency" : false,
+  "n_postings" : 7,
+  "avg_age_days" : 86.0,
+  "oldest_days" : 86,
+  "pct_over60d" : 100.0
+}, {
+  "company" : "ZEISS",
+  "is_agency" : false,
+  "n_postings" : 8,
+  "avg_age_days" : 84.9,
+  "oldest_days" : 245,
+  "pct_over60d" : 37.5
+}, {
+  "company" : "Speechify",
+  "is_agency" : false,
+  "n_postings" : 25,
+  "avg_age_days" : 83.2,
+  "oldest_days" : 107,
+  "pct_over60d" : 76.0
+}, {
+  "company" : "workidentity",
+  "is_agency" : false,
+  "n_postings" : 8,
+  "avg_age_days" : 80.5,
+  "oldest_days" : 86,
+  "pct_over60d" : 87.5
+}, {
+  "company" : "Wolters Kluwer",
+  "is_agency" : false,
+  "n_postings" : 7,
+  "avg_age_days" : 80.3,
+  "oldest_days" : 181,
+  "pct_over60d" : 42.9
+}, {
+  "company" : "Inform",
+  "is_agency" : false,
+  "n_postings" : 6,
+  "avg_age_days" : 77.3,
+  "oldest_days" : 133,
+  "pct_over60d" : 66.7
+}, {
+  "company" : "Zürcher Kantonalbank und ihre Tochtergesellschaften",
+  "is_agency" : false,
+  "n_postings" : 7,
+  "avg_age_days" : 74.4,
+  "oldest_days" : 183,
+  "pct_over60d" : 42.9
+}, {
+  "company" : "NVIDIA",
+  "is_agency" : false,
+  "n_postings" : 6,
+  "avg_age_days" : 74.0,
+  "oldest_days" : 251,
+  "pct_over60d" : 33.3
+}, {
+  "company" : "ARX Robotics",
+  "is_agency" : false,
+  "n_postings" : 5,
+  "avg_age_days" : 73.0,
+  "oldest_days" : 91,
+  "pct_over60d" : 100.0
+}, {
+  "company" : "Stark",
+  "is_agency" : false,
+  "n_postings" : 8,
+  "avg_age_days" : 71.0,
+  "oldest_days" : 86,
+  "pct_over60d" : 75.0
+}, {
+  "company" : "neoshare",
+  "is_agency" : false,
+  "n_postings" : 6,
+  "avg_age_days" : 65.7,
+  "oldest_days" : 180,
+  "pct_over60d" : 33.3
+}, {
+  "company" : "Schwarz Digits",
+  "is_agency" : false,
+  "n_postings" : 49,
+  "avg_age_days" : 65.2,
+  "oldest_days" : 273,
+  "pct_over60d" : 26.5
+}, {
+  "company" : "1Komma5° GmbH",
+  "is_agency" : false,
+  "n_postings" : 7,
+  "avg_age_days" : 63.3,
+  "oldest_days" : 161,
+  "pct_over60d" : 28.6
+}, {
+  "company" : "Simon-Kucher & Partners",
+  "is_agency" : false,
+  "n_postings" : 7,
+  "avg_age_days" : 61.3,
+  "oldest_days" : 85,
+  "pct_over60d" : 14.3
+}, {
+  "company" : "Thales",
+  "is_agency" : false,
+  "n_postings" : 5,
+  "avg_age_days" : 54.2,
+  "oldest_days" : 73,
+  "pct_over60d" : 20.0
+}, {
+  "company" : "Swisscom",
+  "is_agency" : false,
+  "n_postings" : 8,
+  "avg_age_days" : 53.4,
+  "oldest_days" : 187,
+  "pct_over60d" : 37.5
+}, {
+  "company" : "SAP",
+  "is_agency" : false,
+  "n_postings" : 12,
+  "avg_age_days" : 50.6,
+  "oldest_days" : 228,
+  "pct_over60d" : 25.0
+}, {
+  "company" : "Atolls",
+  "is_agency" : false,
+  "n_postings" : 5,
+  "avg_age_days" : 50.4,
+  "oldest_days" : 83,
+  "pct_over60d" : 60.0
+}, {
+  "company" : "Agile Robots SE",
+  "is_agency" : false,
+  "n_postings" : 12,
+  "avg_age_days" : 45.1,
+  "oldest_days" : 117,
+  "pct_over60d" : 33.3
+} ]
