@@ -30,11 +30,18 @@ services:
     volumes:
       - ./docs/data:/export
 
+  goatcounter:
+    image: arp242/goatcounter:latest
+    restart: unless-stopped
+    volumes:
+      - goatcounter-data:/home/goatcounter/goatcounter-data
+
   web:
     image: nginx:alpine
     restart: unless-stopped
     depends_on:
       - app
+      - goatcounter
     ports:
       - "${WEB_PORT:-8087}:80"
     volumes:
@@ -43,3 +50,4 @@ services:
 
 volumes:
   pgdata:
+  goatcounter-data:
