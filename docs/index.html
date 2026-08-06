@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>DACH Data Job Market Tracker</title>
+<title>DACH Software Development Job Market Tracker</title>
 <meta name="description"
-      content="How stale is the German-speaking data job market?
-               Germany, Austria and Switzerland tracked weekly through
-               a Delta Lake pipeline.">
-<meta property="og:title" content="DACH Data Job Market Tracker">
+      content="How stale is the German-speaking software development job
+               market? Germany, Austria and Switzerland tracked weekly
+               through a live ingestion pipeline.">
+<meta property="og:title" content="DACH Software Development Job Market Tracker">
 <meta property="og:description"
-      content="Germany, Austria and Switzerland. How long do data jobs
-               really stay open? Updated weekly.">
+      content="Germany, Austria and Switzerland. How long do software
+               engineering jobs really stay open? Updated weekly.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://chrisinho8.github.io/DACH-data-job-market/assets/og.png">
 <meta property="og:url" content="https://chrisinho8.github.io/DACH-data-job-market/">
@@ -303,12 +303,12 @@
            width="86" height="107" loading="eager"
            onerror="this.remove()">
       <h1>Whats up with the
-          <em>data-job-market</em> in the DACH region?</h1>
+          <em>software-dev job market</em> in the DACH region?</h1>
     </div>
     <p class="sub">
-      Every monday, data from job-postings across all three DACH
-      countries gets pulled from a public API (Adzuna), loaded into a Delta Lake
-      pipeline on Databricks, and aggregated for various insights
+      Every monday, job postings across all three DACH
+      countries get pulled from a public API (Adzuna), classified into
+      software engineering role families, and aggregated for various insights
     </p>
     <p class="meta" id="meta">Loading&hellip;</p>
     <p class="byline">
@@ -492,23 +492,6 @@ Pick a role: the left chart shows what its postings ask for, the
     </div>
   </section>
 
-  <!-- ============ THE AI SPLIT ============ -->
-  <section id="ai-section" hidden>
-    <h2>Which AI roles are companies hiring for?</h2>
-    <p class="note">
-    </p>
-    <div class="grid2">
-      <div>
-        <h3 class="subh">Postings per AI family</h3>
-        <canvas id="aivol" height="230"></canvas>
-      </div>
-      <div>
-        <h3 class="subh">Average days open per AI family</h3>
-        <canvas id="aiage" height="230"></canvas>
-      </div>
-    </div>
-  </section>
-
   <!-- ============ ROLES AND SENIORITY ============ -->
   <section>
     <h2>Role and seniority  (Austria, Germany and Switzerland)</h2>
@@ -522,7 +505,7 @@ Pick a role: the left chart shows what its postings ask for, the
     <canvas id="senage" height="130"></canvas>
   </section>
   <section>
-    <h2>Comparison between the different data jobs and their posting lenghts</h2>
+    <h2>Comparison between the different software roles and their posting lenghts</h2>
     <p class="note">
     </p>
     <div class="grid2">
@@ -557,7 +540,7 @@ Pick a role: the left chart shows what its postings ask for, the
   <section>
     <h2>Which country asks for which role?</h2>
     <p class="note">
-      Every country hires Data Engineers, so raw shares mostly repeat
+      Every country hires Backend Developers, so raw shares mostly repeat
       what you already know. This shows the opposite: how far each
       country's demand for a role sits <strong>above or below the DACH
       average</strong>. Orange means over-represented, blue means
@@ -604,23 +587,20 @@ Pick a role: the left chart shows what its postings ask for, the
       <li><strong>Roles are classified from the job title</strong> with
           keyword rules, not from the description, which the aggregator
           truncates.</li>
-      <li><strong>AI is six families, and the AI numbers here are a
-          floor, not a total.</strong> The rules run most specific
-          first (research, GenAI, MLOps, ML, consulting, AI engineer).
-          A title that says only "AI" or "KI" and names no role is
-          dropped rather than counted, because the pipeline cannot tell
-          from a title whether it is an AI job or a job advertised by a
-          company that likes the word. Summing the six gives you every
-          AI posting that <em>describes itself</em>. The count of
-          postings using AI as an adjective is larger and is not
-          published.</li>
-      <li><strong>The boundaries between AI families are judgement
-          calls.</strong> "Applied Scientist, Machine Learning" is
-          counted as research rather than ML engineering; a title
-          naming both data and AI is counted as data. Reasonable people
-          would draw these lines differently, and the rules are in
-          <code>03_silver_clean.py</code> so you can check where yours
-          would differ.</li>
+      <li><strong>Ten role families, and the rules run most specific
+          first</strong> (security, embedded, gamedev, QA, DevOps/SRE,
+          cloud/platform, mobile, frontend, fullstack, then backend as
+          the catch-all). A generic "software developer" or
+          "softwareentwickler" title with no more specific signal lands
+          in backend, which is why it is the largest bucket.</li>
+      <li><strong>The boundaries between role families are judgement
+          calls.</strong> A title naming both "full stack" and a
+          backend language is counted as fullstack, checked before the
+          backend catch-all; "cloud engineer" is counted separately
+          from "DevOps/SRE" even though the two overlap in practice.
+          Reasonable people would draw these lines differently, and the
+          rules live in the classification migration so you can check
+          where yours would differ.</li>
       <li><strong>Entry programmes are excluded</strong> (Ausbildung,
           duales Studium, Werkstudent, Praktikum, Trainee), along with
           Controlling and finance roles and data-centre infrastructure
@@ -663,9 +643,10 @@ const CORAL = "#D97757", CLAY = "#CC785C", SAGE = "#7C9885",
       PLUM  = "#9B7B9B", STEEL = "#6E8CA0", MOSS = "#6E9384",
       SAND  = "#C7A87C";
 
-/* Splitting AI into families took the role count from 10 to 15, so a
-   10-colour cycle would have repeated. Six more, chosen to stay
-   distinguishable in the same muted range.                         */
+/* Ten role families plus three excluded/junk buckets can still exceed
+   a 10-colour cycle once legacy or ad-hoc families show up, so six
+   more are kept in reserve, chosen to stay distinguishable in the
+   same muted range.                                                */
 const ROSE = "#B5657F", INDIGO = "#6B6E9B", OLIVE = "#8C9455",
       OCEAN = "#4F7A8C", STONE = "#8A857C", RUST  = "#9C5A3C";
 
@@ -674,68 +655,34 @@ const CATS = [CORAL, STEEL, SAGE, AMBER, PLUM, TEAL,
               ROSE, INDIGO, OLIVE, OCEAN, STONE, RUST];
 
 /* Fixed colour per role family, so a family keeps its colour across
-   every chart on the page even when the sort order differs. The AI
-   families share the warm end of the palette and the data families
-   the cool end, which makes the AI block readable as a block.     */
+   every chart on the page even when the sort order differs.       */
 const ROLE_COLOUR = {
-  "ai engineer":   CORAL,  "genai / llm":   DEEP,
-  "ml engineer":   CLAY,   "mlops":         RUST,
-  "ai consultant": AMBER,  "ai research":   SAND,
-  "ai / ml":       CORAL,          /* pre-split snapshots */
-
-  "data engineer":      STEEL,  "data analyst":    SAGE,
-  "data scientist":     TEAL,   "data architect":  INDIGO,
-  "analytics engineer": MOSS,   "dwh / etl":       OCEAN,
-  "data governance":    PLUM,   "data consultant": OLIVE,
-  "bi developer":       ROSE
+  "backend":            STEEL,  "frontend":          SAGE,
+  "fullstack":          TEAL,   "mobile":            INDIGO,
+  "devops / sre":       MOSS,   "cloud / platform":  OCEAN,
+  "qa / test":          PLUM,   "embedded":          OLIVE,
+  "security engineer":  ROSE,   "gamedev":           AMBER
 };
 
 /* falls back to the cycle for any family the map has not seen */
 const rcol = (rf, i) =>
   ROLE_COLOUR[String(rf).toLowerCase()] || CATS[i % CATS.length];
 
-/* The six published AI families, plus two names that only appear in
-   older data/ snapshots: "ai / ml" from before the split, and
-   "ai (other)" from the window when the vague bucket was still
-   published. Both are kept so an old snapshot still totals correctly.
-   Anything asking "how much of this is AI" must sum this set, never
-   test one string.                                                */
-const AI_SET = new Set([
-  "ai engineer", "genai / llm", "ml engineer", "mlops",
-  "ai consultant", "ai research",
-  "ai / ml", "ai (other)"        /* legacy snapshots only */
-]);
-const isAI = rf => AI_SET.has(String(rf).toLowerCase());
-
-/* Families the pipeline no longer publishes. A current data/ refresh
-   contains none of these; they are filtered out rather than trusted to
-   be absent, so an old JSON file cannot resurrect a chart series the
-   surrounding copy no longer explains.                             */
-const RETIRED = new Set(["ai (other)", "ai / ml"]);
+/* Families the pipeline no longer publishes (none yet for this
+   vertical). Kept as a mechanism so a future retirement can filter
+   here without touching every chart that calls live().           */
+const RETIRED = new Set([]);
 const isLive  = rf => !RETIRED.has(String(rf).toLowerCase());
 const live    = rows => rows.filter(r => isLive(r.role_family));
 
-/* Tool categories are published as snake_case identifiers. Rewrite
+/* Skill categories are published as snake_case identifiers. Rewrite
    them for display only; the pipeline values must not change.     */
 const SKILL_CAT_LABEL = {
-  ml_framework: "ML frameworks",
-  mlops:        "MLOps",
-  genai:        "Generative AI",
-  nlp_cv:       "NLP / computer vision",
-  language:     "Languages",
-  processing:   "Processing",
-  streaming:    "Streaming",
-  warehouse:    "Warehouse",
-  orchestr:     "Orchestration",
-  transform:    "Transformation",
-  database:     "Databases",
-  cloud:        "Cloud",
-  devops:       "DevOps",
-  bi:           "BI",
-  platform:     "Platform",
-  enterprise:   "Enterprise",
-  practice:     "Practices",
-  legacy:       "Legacy"
+  language:  "Languages",
+  framework: "Frameworks",
+  devops:    "DevOps",
+  cloud:     "Cloud",
+  database:  "Databases"
 };
 const scat = c => SKILL_CAT_LABEL[c] || String(c).replace(/_/g, " ");
 
@@ -759,33 +706,22 @@ const cap = s => String(s).charAt(0).toUpperCase() + String(s).slice(1);
    not change. Only the labels shown to a reader are rewritten, so
    nothing downstream of gold breaks.                              */
 const ROLE_LABEL = {
-  /* the seven AI families that replaced the single "ai / ml" one */
-  "ai engineer":        "AI Engineer",
-  "genai / llm":        "GenAI / LLM Engineer",
-  "ml engineer":        "ML Engineer",
-  "mlops":              "MLOps / ML Platform",
-  "ai consultant":      "AI Consulting",
-  "ai research":        "AI Research",   /* incl. applied scientist */
-  /* kept so an older data/ snapshot still renders a sane label if one
-     of these ever slips past the RETIRED filter */
-  "ai / ml":            "AI/ML (pre-split)",
-  "ai (other)":         "AI, role unspecified (retired)",
-
-  "data engineer":      "Data Engineer",
-  "data scientist":     "Data Scientist",
-  "data analyst":       "Data Analyst",
-  "data architect":     "Data Architect",
-  "analytics engineer": "Analytics Engineer",
-  "dwh / etl":          "Data Warehouse / ETL",
-  "data governance":    "Data Governance and Security",
-  "data consultant":    "Data Consultant",
-  "bi developer":       "BI Developer",
+  "backend":            "Backend Developer",
+  "frontend":           "Frontend Developer",
+  "fullstack":          "Full Stack Developer",
+  "mobile":             "Mobile Developer",
+  "devops / sre":       "DevOps / SRE",
+  "qa / test":          "QA / Test Automation",
+  "embedded":           "Embedded / Firmware",
+  "security engineer":  "Security Engineer",
+  "gamedev":            "Game Developer",
+  "cloud / platform":   "Cloud / Platform Engineer",
   "all roles":          "All roles"
 };
 /* Chart.js clips a y-axis label once it needs more than about a
-   third of the chart width, which truncated "Data Governance and
-   Security". An array of strings renders as stacked lines, so wrap
-   long names instead of shortening them.                          */
+   third of the chart width, which truncated names like "Cloud /
+   Platform Engineer". An array of strings renders as stacked lines,
+   so wrap long names instead of shortening them.                  */
 const wrap = (s, max = 18) => {
   const out = [];
   String(s).split(" ").forEach(w => {
@@ -880,9 +816,9 @@ function bar(id, labels, datasets, horizontal, stacked, pct, ax) {
           `${c.dataset.label}: ${c.raw}%` } } : {}
       },
       /* ax.pick turns a bar into a link into the postings browser, so
-         a reader can go from "Data Engineer is the tallest bar" to the
-         973 rows that made it tall. Charts without a pick behave as
-         before. */
+         a reader can go from "Backend Developer is the tallest bar" to
+         the 973 rows that made it tall. Charts without a pick behave
+         as before. */
       onClick: (e, els) => {
         if (ax.pick && els.length) ax.pick(els[0].index);
       },
@@ -1757,7 +1693,7 @@ get("role_breakdown").then(all => {
 
   /* --- role mix by country, as an over/under-index -----------------
      A 100% stacked bar over 15 roles is unreadable and mostly restates
-     that everyone hires Data Engineers. What is actually interesting is
+     that everyone hires Backend Developers. What is actually interesting is
      deviation: this cell divides a country's share of a role by the
      DACH-wide share of that role. 1.00 is "exactly normal", 2.00 is
      "twice as into this as the region", 0.50 is half.
@@ -1927,48 +1863,6 @@ get("stale_by_company").then(d => {
         /* no company dropdown: the search box already matches on
            employer, so a click just fills it in */
         pick: i => openPostings({ q: vol[i].company }) });
-
-});
-
-/* ---------------- the AI split ----------------
-   Reads the same role_breakdown table as the roles section, filtered
-   to the six AI families. The section stays hidden if the data
-   directory still holds a pre-split snapshot, so an old deploy does
-   not render an empty chart.                                      */
-get("role_breakdown").then(d => {
-  if (!d || !d.length) return;
-
-  const agg = {};
-  live(d).filter(r => isAI(r.role_family)).forEach(r => {
-    const k = String(r.role_family).toLowerCase();
-    agg[k] = agg[k] || { n: 0, wage: 0 };
-    agg[k].n    += r.n_postings;
-    agg[k].wage += r.n_postings * r.avg_age_days;
-  });
-
-  const fams = Object.keys(agg);
-  /* one family means the pipeline has not been re-run yet */
-  if (fams.length < 2) return;
-
-  const sec = document.getElementById("ai-section");
-  if (sec) sec.hidden = false;
-
-  const rows = fams.map(f => ({ role: f, n: agg[f].n,
-                                age: agg[f].wage / agg[f].n }))
-                   .sort((a, b) => b.n - a.n);
-
-  bar("aivol", rows.map(r => wrap(rlab(r.role))),
-      [ds("Live postings", rows.map(r => r.n),
-          rows.map((r, i) => rcol(r.role, i)))], true, false, false,
-      { x: "live postings", y: "AI family",
-        pick: i => openPostings({ family: rows[i].role }) });
-
-  const byAge = rows.slice().sort((a, b) => b.age - a.age);
-  bar("aiage", byAge.map(r => wrap(rlab(r.role))),
-      [ds("Avg days open", byAge.map(r => Math.round(r.age)),
-          byAge.map(r => ageColour(r.age)))], true, false, false,
-      { x: "average days a posting stays open", y: "AI family",
-        pick: i => openPostings({ family: byAge[i].role }) });
 
 });
 
@@ -2468,11 +2362,9 @@ get("history").then(h => {
       (sd || []).forEach(r => base[r.skill] = r.pct_postings);
 
       /* live() because this picker is built from whatever families
-         skill_by_role.json contains, and that file lagged the split
-         for weeks: it kept offering an "AI/ML (pre-split)" button long
-         after the family stopped existing. Filtering here means a
-         stale export degrades to fewer buttons rather than to a wrong
-         one. */
+         skill_by_role.json contains, and RETIRED may grow if a family
+         is ever dropped. Filtering here means a stale export degrades
+         to fewer buttons rather than to a wrong one. */
       const byRole = {};
       (hasRoles ? live(sr) : []).forEach(r => {
         (byRole[r.role_family] = byRole[r.role_family] || []).push(r);
@@ -2720,29 +2612,13 @@ get("history").then(h => {
       const hasRoles =
         !!(cr && cr.length && cr[0].role_family !== undefined && selR);
 
-      /* ---- totals and AI share per city, from the role cut ----
-         AI is six families, so this sums the set rather than testing
-         one string. AI_SET is defined once at the top. Retired
-         families are stripped first, so an old data/ snapshot cannot
-         quietly inflate a city's AI share with rows the rest of the
-         page no longer counts.
-
-         One axis, not two. There used to be a second "role named"
-         share because the vague bucket was published alongside the
-         named ones; now nothing vague is published and the two
-         numbers would be identical.                              */
+      /* ---- totals per city, from the role cut ---- */
       const crLive = (cr && cr.length) ? live(cr) : [];
-      const cityTotal = {}, aiShare = {};
+      const cityTotal = {};
       if (crLive.length && crLive[0].role_family !== undefined) {
-        const ai = {};
         crLive.forEach(r => {
           const k = `${r.country}|${r.city}`;
-          const rf = String(r.role_family).toLowerCase();
           cityTotal[k] = (cityTotal[k] || 0) + r.n_postings;
-          if (AI_SET.has(rf)) ai[k] = (ai[k] || 0) + r.n_postings;
-        });
-        Object.keys(cityTotal).forEach(k => {
-          aiShare[k] = +(100 * (ai[k] || 0) / cityTotal[k]).toFixed(1);
         });
       }
 
@@ -2762,8 +2638,7 @@ get("history").then(h => {
           listings: r.n_postings,
           age: r.avg_age_days,
           english: r.pct_english,
-          agency: r.pct_agency,
-          ai:     aiShare[`${r.country}|${r.city}`]     ?? 0
+          agency: r.pct_agency
         }))
         .sort(byCountryThenSize);
 
@@ -2802,8 +2677,7 @@ get("history").then(h => {
         ["Live listings",   "listings", v => v.toLocaleString()],
         ["Avg days open",   "age",      v => Math.round(v) + " d"],
         ["% in English",    "english",  v => v + "%"],
-        ["% via agency",    "agency",   v => v + "%"],
-        ["% AI roles",      "ai",       v => v + "%"]
+        ["% via agency",    "agency",   v => v + "%"]
       ];
       const AX_ROLE = [
         ["Live listings", "listings", v => v.toLocaleString()],
