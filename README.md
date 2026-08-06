@@ -1,6 +1,6 @@
 # What's up with the software-dev job market in Austria/Germany/Switzerland?
 
-**[Open the live tracker](https://github.com/jehadbaeth/DACH-data-job-market)** · updated every Monday at 06:00
+**[Open the live tracker](https://carl-latitudee5570.tail5b4e29.ts.net/)** · updated every Monday at 06:00
 
 A weekly snapshot of the DACH software development job market: live postings from Germany, Austria and Switzerland, classified into ten engineering role families and scanned against a language/framework/devops/cloud/database skill dictionary. A Spring Boot backend queries the Adzuna API, classifies and aggregates every posting in Postgres, and exports static JSON that a single-file Chart.js dashboard (`docs/index.html`) reads directly — no server needed to view it.
 
@@ -94,10 +94,10 @@ curl -X POST http://localhost:8080/api/pipeline/export/software-dev
 ## Running it yourself
 
 1. Get an `app_id` and `app_key` from `developer.adzuna.com`.
-2. Copy `.env.example` to `.env` and fill in `DB_PASSWORD`, `ADZUNA_APP_ID`, `ADZUNA_APP_KEY` (and optionally `TZ`). `.env` is gitignored — never commit it.
-3. `docker compose up -d --build` — this starts Postgres and the Spring Boot app, and Flyway applies all migrations automatically on boot.
+2. Copy `.env.example` to `.env` and fill in `DB_PASSWORD`, `ADZUNA_APP_ID`, `ADZUNA_APP_KEY` (and optionally `TZ`, `WEB_PORT`). `.env` is gitignored — never commit it.
+3. `docker compose up -d --build` — this starts Postgres, the Spring Boot app, and an nginx container (`web`) that serves `docs/` and proxies `/api/` to the app, all behind a single port (`WEB_PORT`, default `8087`). Flyway applies all migrations automatically on boot.
 4. Trigger a run (see the `curl` commands above), or wait for the Monday 03:00 scheduled job.
-5. Open `docs/index.html` — it fetches everything it needs from `docs/data/*.json` produced by the run.
+5. Open `http://<host>:<WEB_PORT>/` — the dashboard fetches everything it needs from `docs/data/*.json` produced by the run. To expose it beyond your LAN, point a reverse proxy or Tailscale Funnel at that port.
 
 Backend tests:
 
