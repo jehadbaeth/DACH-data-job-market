@@ -731,10 +731,16 @@ const get = f =>
 
 fetch(`/api/dashboard/${RULESET}/dates`).then(r => r.ok ? r.json() : [])
   .catch(() => []).then(dates => {
+    // dates comes back newest-first. Only show the picker once there is
+    // an actual choice to make: "Latest" always IS the newest date, so
+    // listing it a second time as its own row reads as if the two could
+    // differ. Fold it into the Latest label instead, and only list the
+    // genuinely older dates below it.
     const sel = document.getElementById("snapshot-picker");
-    if (!sel || !dates.length) return;
-    sel.innerHTML = '<option value="">Latest</option>' +
-      dates.map(d => `<option value="${d}">${d}</option>`).join("");
+    if (!sel || dates.length < 2) return;
+    const [latest, ...older] = dates;
+    sel.innerHTML = `<option value="">Latest (${latest})</option>` +
+      older.map(d => `<option value="${d}">${d}</option>`).join("");
     sel.value = VIEW_DATE || "";
     sel.hidden = false;
     sel.addEventListener("change", e => {
