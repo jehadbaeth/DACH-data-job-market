@@ -59,6 +59,12 @@
 
   .subh{font-size:14px;margin:0 0 10px;color:#5C5A54;font-weight:600}
 
+  .snapshot-nav{margin:6px 0 0;font-size:13px;color:#5C5A54}
+  .snapshot-nav label{margin-right:6px}
+  .snapshot-nav select{font:inherit;font-size:13px;padding:4px 8px;
+    border:1px solid #DCD6C8;border-radius:6px;background:#FFFDF8;
+    color:#26241F;cursor:pointer}
+
   .pfilters{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 12px}
   .pfilters input,.pfilters select,.pfilters button{
     font:inherit;font-size:13.5px;padding:7px 10px;
@@ -312,6 +318,10 @@
       software engineering role families, and aggregated for various insights
     </p>
     <p class="meta" id="meta">Loading&hellip;</p>
+    <p class="snapshot-nav">
+      <label for="snapshot-picker">Snapshot:</label>
+      <select id="snapshot-picker" hidden><option value="">Latest</option></select>
+    </p>
     <p class="byline">
       <a href="https://github.com/jehadbaeth/DACH-data-job-market"
          target="_blank" rel="noopener">GitHub page</a> &middot;
@@ -701,8 +711,39 @@ Chart.defaults.font.family =
 Chart.defaults.color = SLATE;
 Chart.defaults.borderColor = LINE;
 
+/* ---------------- snapshot date picker ----------------
+   No ?date= param: read straight from the static docs/data/*.json
+   files, same as always. With ?date=YYYY-MM-DD: fetch one bundled
+   response from the backend for that historical run and serve every
+   get(f) call out of it instead, so every existing chart handler
+   below works unmodified against either source.                   */
+const RULESET = "software-dev";
+const VIEW_DATE = new URLSearchParams(location.search).get("date") || null;
+const BUNDLE_PROMISE = VIEW_DATE
+  ? fetch(`/api/dashboard/${RULESET}/${VIEW_DATE}`)
+      .then(r => r.ok ? r.json() : null).catch(() => null)
+  : Promise.resolve(null);
+
 const get = f =>
-  fetch(`data/${f}.json`).then(r => r.json()).catch(() => null);
+  VIEW_DATE
+    ? BUNDLE_PROMISE.then(b => (b && b[f]) ?? null)
+    : fetch(`data/${f}.json`).then(r => r.json()).catch(() => null);
+
+fetch(`/api/dashboard/${RULESET}/dates`).then(r => r.ok ? r.json() : [])
+  .catch(() => []).then(dates => {
+    const sel = document.getElementById("snapshot-picker");
+    if (!sel || !dates.length) return;
+    sel.innerHTML = '<option value="">Latest</option>' +
+      dates.map(d => `<option value="${d}">${d}</option>`).join("");
+    sel.value = VIEW_DATE || "";
+    sel.hidden = false;
+    sel.addEventListener("change", e => {
+      const url = new URL(location.href);
+      if (e.target.value) url.searchParams.set("date", e.target.value);
+      else url.searchParams.delete("date");
+      location.href = url.toString();
+    });
+  });
 
 const cyc = i => CATS[i % CATS.length];
 const cap = s => String(s).charAt(0).toUpperCase() + String(s).slice(1);

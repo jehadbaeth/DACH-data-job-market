@@ -27,4 +27,7 @@ public interface PostingRepository extends JpaRepository<Posting, Long> {
 
     @Query("SELECT MAX(p.snapshotDate) FROM Posting p WHERE p.rulesetId = :rulesetId")
     Optional<LocalDate> findLatestSnapshotDate(@Param("rulesetId") Long rulesetId);
+
+    @Query("SELECT DISTINCT p.snapshotDate FROM Posting p WHERE p.rulesetId = :rulesetId ORDER BY p.snapshotDate DESC")
+    List<LocalDate> findDistinctSnapshotDates(@Param("rulesetId") Long rulesetId);
 }
