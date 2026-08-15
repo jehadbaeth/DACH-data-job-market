@@ -6,12 +6,12 @@
 <title>DACH Software Development Job Market Tracker</title>
 <meta name="description"
       content="How stale is the German-speaking software development job
-               market? Germany, Austria and Switzerland tracked weekly
+               market? Germany, Austria and Switzerland tracked daily
                through a live ingestion pipeline.">
 <meta property="og:title" content="DACH Software Development Job Market Tracker">
 <meta property="og:description"
       content="Germany, Austria and Switzerland. How long do software
-               engineering jobs really stay open? Updated weekly.">
+               engineering jobs really stay open? Updated daily.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://carl-latitudee5570.tail5b4e29.ts.net/">
 <meta name="twitter:card" content="summary_large_image">
@@ -243,6 +243,10 @@
   .ctlrow{display:flex;align-items:center;gap:12px;margin-bottom:12px}
   .ctlrow-roles{align-items:flex-start;margin-bottom:0}
   .mapctl .pick{margin:0;flex:1}
+  .checks{display:flex;gap:16px;flex-wrap:wrap}
+  .checks label{display:inline-flex;align-items:center;gap:6px;
+    font-size:13px;font-weight:500;color:var(--slate);cursor:pointer}
+  .checks input{cursor:pointer}
   .ctl-lab{flex:0 0 74px;font-size:11px;font-weight:700;
            letter-spacing:.07em;text-transform:uppercase;
            color:#8A857C;line-height:1.9}
@@ -288,6 +292,21 @@
   .cmp optgroup{font-weight:700;color:var(--slate)}
   .cmp .hint{font-size:11.5px;color:#8A857C;align-self:center;
              font-weight:400}
+
+  /* search box stacked on top of its dropdown, one shared frame */
+  .cmp .selwrap{display:flex;flex-direction:column;
+    border:1px solid var(--line);border-radius:7px;overflow:hidden;
+    background:#FCFBF8;transition:border-color .12s ease}
+  .cmp .selwrap:hover{border-color:var(--clay)}
+  .cmp .selwrap:focus-within{border-color:var(--clay)}
+  .cmp .selwrap .citysearch{font:500 13px system-ui,sans-serif;
+    padding:7px 11px;border:0;border-bottom:1px solid var(--line);
+    background:#F0EEE6;color:var(--ink);width:100%;outline:0;
+    max-width:210px}
+  .cmp .selwrap .citysearch::placeholder{color:#A8A296;font-weight:400}
+  .cmp .selwrap .citysearch.nohit{background:#FBEDE7;color:#8A4A2E}
+  .cmp .selwrap select{border:0;border-radius:0;padding:7px 11px}
+  .cmp .selwrap select:focus-visible{outline:0}
   #cmptable td:first-child{font-weight:500;color:#5C5A54}
   #cmptable td.num{font-variant-numeric:tabular-nums;font-weight:600}
 
@@ -304,7 +323,7 @@
 <header>
   <div class="wrap">
     <p class="eyebrow">Germany &middot; Austria &middot; Switzerland
-       &middot; updated every Monday at 06:00</p>
+       &middot; updated daily at 03:00</p>
     <div class="titlerow">
       <img class="hdmark" src="assets/dach.svg" alt=""
            width="86" height="107" loading="eager"
@@ -313,7 +332,7 @@
           <em>software-dev job market</em> in the DACH region?</h1>
     </div>
     <p class="sub">
-      Every monday, job postings across all three DACH
+      Every day, job postings across all three DACH
       countries get pulled from a public API (Adzuna), classified into
       software engineering role families, and aggregated for various insights
     </p>
@@ -456,8 +475,22 @@
     <p class="note">
     </p>
     <div class="cmp">
-      <label>City A <select id="cmpA"></select></label>
-      <label>City B <select id="cmpB"></select></label>
+      <label>City A
+        <span class="selwrap">
+          <input id="cmpAq" class="citysearch" type="search"
+                 autocomplete="off" placeholder="Search city…"
+                 aria-label="Search cities for city A">
+          <select id="cmpA"></select>
+        </span>
+      </label>
+      <label>City B
+        <span class="selwrap">
+          <input id="cmpBq" class="citysearch" type="search"
+                 autocomplete="off" placeholder="Search city…"
+                 aria-label="Search cities for city B">
+          <select id="cmpB"></select>
+        </span>
+      </label>
       <label>Role <select id="cmpRole"></select></label>
     </div>
     <div class="maprow">
@@ -467,6 +500,29 @@
         <table class="rank"><tbody id="cmptable"></tbody></table>
       </div>
     </div>
+  </section>
+
+  <section id="trend-section" hidden>
+    <h2>How the market moves over time</h2>
+    <p class="note">
+      Every snapshot adds a point, nothing is overwritten. Days open
+      and posting volume come from the same daily runs that feed the
+      rest of the page.
+    </p>
+    <div class="mapctl">
+      <div class="ctlrow ctlrow-roles">
+        <span class="ctl-lab">Role</span>
+        <div id="trendpick" class="pick"></div>
+      </div>
+      <div class="ctlrow">
+        <span class="ctl-lab">Show</span>
+        <div class="checks" id="trendshow">
+          <label><input type="checkbox" id="tshow-age">
+                 Avg days open</label>
+        </div>
+      </div>
+    </div>
+    <canvas id="trend" height="220"></canvas>
   </section>
 
   <!-- ============ TOOLS ============ -->
@@ -569,6 +625,12 @@ Pick a role: the left chart shows what its postings ask for, the
     <h2>Which company has the most listings?</h2>
     <p class="note">
     </p>
+    <div class="mapctl">
+      <div class="ctlrow ctlrow-roles">
+        <span class="ctl-lab">Role</span>
+        <div id="emppick" class="pick"></div>
+      </div>
+    </div>
     <canvas id="empvol" height="260"></canvas>
   </section>
  
@@ -584,8 +646,22 @@ Pick a role: the left chart shows what its postings ask for, the
   </section>
 
   <!-- ============ CAVEATS ============ -->
-  <section class="caveats">
-    <h2>What this pipeline will not tell you</h2>
+  <section class="caveats" id="limitations">
+    <div class="foldhead">
+      <h2>What this pipeline will not tell you</h2>
+      <button type="button" class="foldbtn" id="limbtn"
+              aria-expanded="false" aria-controls="limbody">
+        <span class="txt">Show</span>
+        <span class="chev" aria-hidden="true">
+          <svg viewBox="0 0 12 8" width="12" height="8" fill="none">
+            <path d="M1 1.5 6 6.5l5-5" stroke="currentColor"
+                  stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </button>
+    </div>
+    <div class="foldbody" id="limbody" hidden>
     <ul>
      
       
@@ -628,6 +704,7 @@ Pick a role: the left chart shows what its postings ask for, the
           (<span id="cav_updated">see the footer</span>). Nothing here
           re-checks whether a job has since been filled or withdrawn.</li>
     </ul>
+    </div>
   </section>
 
   <footer>
@@ -1902,22 +1979,87 @@ get("agency_comparison").then(d => {
         y: "days open (bar 1) · % over 60 days (bar 2)" });
 });
 
-/* ---------------- employers ---------------- */
-get("stale_by_company").then(d => {
-  if (!d || !d.length) return;
+/* ---------------- employers ----------------
+   Built from POSTINGS rather than stale_by_company, because the role
+   filter needs a company x role_family cut and the precomputed table
+   only carries company totals. POSTINGS is already fetched for the
+   postings browser, so this costs no extra request. Counts can sit a
+   little under stale_by_company: POSTINGS drops rows with no url and
+   rows in retired roles. */
+function initEmployers() {
+  if (!POSTINGS.length) return;
 
-  const vol = d.slice().sort((a, b) => b.n_postings - a.n_postings)
-               .slice(0, 15);
-  bar("empvol", vol.map(r => wrap(r.company, 24)),
-      [ds("Live postings", vol.map(r => r.n_postings),
-          vol.map(r => ageColour(r.avg_age_days)))], true, false, false,
-      { x: "live postings (bar colour = average days open)",
-        y: "company",
-        /* no company dropdown: the search box already matches on
-           employer, so a click just fills it in */
-        pick: i => openPostings({ q: vol[i].company }) });
+  const EALL = "__all";
+  const pick = document.getElementById("emppick");
+  let current = EALL;
 
-});
+  const famCount = {};
+  POSTINGS.forEach(r => {
+    if (r.role_family) famCount[r.role_family] =
+      (famCount[r.role_family] || 0) + 1;
+  });
+  const fams = Object.keys(famCount)
+    .sort((a, b) => famCount[b] - famCount[a]);
+
+  function topCompanies(role) {
+    const agg = {};
+    POSTINGS.forEach(r => {
+      if (!r.company) return;
+      if (role !== EALL && r.role_family !== role) return;
+      const a = agg[r.company] = agg[r.company] || { n: 0, age: 0 };
+      a.n++;
+      a.age += (r.age_days || 0);
+    });
+    return Object.entries(agg)
+      .map(([company, a]) => ({ company, n: a.n, avg: a.age / a.n }))
+      .sort((x, y) => y.n - x.n || x.company.localeCompare(y.company))
+      .slice(0, 15);
+  }
+
+  function draw() {
+    const vol = topCompanies(current);
+    const el = document.getElementById("empvol");
+    if (el && Chart.getChart) {
+      const old = Chart.getChart(el);
+      if (old) old.destroy();
+    }
+    if (!vol.length) return;
+    bar("empvol", vol.map(r => wrap(r.company, 24)),
+        [ds("Live postings", vol.map(r => r.n),
+            vol.map(r => ageColour(r.avg)))], true, false, false,
+        { x: "live postings (bar colour = average days open)",
+          y: "company",
+          /* no company dropdown: the search box already matches on
+             employer, so a click just fills it in */
+          pick: i => openPostings(current === EALL
+            ? { q: vol[i].company }
+            : { q: vol[i].company, family: current }) });
+  }
+
+  if (pick && fams.length) {
+    const names = [EALL].concat(fams);
+    pick.innerHTML = names.map(n =>
+      `<button type="button" data-role="${esc(n)}"
+               title="${n === EALL
+                 ? POSTINGS.length.toLocaleString() + " postings"
+                 : famCount[n].toLocaleString() + " postings"}"
+               aria-pressed="${n === current}">` +
+      `${n === EALL ? "All roles" : esc(rlab(n))}</button>`).join("");
+
+    pick.querySelectorAll("button").forEach(b => {
+      b.addEventListener("click", () => {
+        current = b.dataset.role;
+        pick.querySelectorAll("button").forEach(x =>
+          x.setAttribute("aria-pressed", x.dataset.role === current));
+        draw();
+      });
+    });
+  } else if (pick) {
+    pick.closest(".mapctl").hidden = true;
+  }
+
+  draw();
+}
 
 /* ---------------- postings browser ----------------------------
    The only row-level view on the page. Everything else is a count;
@@ -2107,6 +2249,8 @@ get("postings").then(d => {
   POSTINGS = d.filter(r => r.url && isLive(r.role_family));
   if (!POSTINGS.length) return;
 
+  initEmployers();
+
   $p("postings-section").hidden = false;
 
   const uniq = k => [...new Set(POSTINGS.map(r => r[k]).filter(Boolean))];
@@ -2197,48 +2341,115 @@ get("skill_demand").then(d => {
 
 });
 
-/* ---------------- trend ---------------- */
+/* ---------------- trend ----------------
+   Role-filterable: "All roles" reads avg_age_days/live_postings, a
+   single role reads role_avg_age_days/role_count. Older snapshots
+   predate the per-role avg-age metric, so the age line falls back to
+   the market-wide average for those and says so in the label rather
+   than just going blank. */
 get("history").then(h => {
   if (!h) return;
-  const pick = m => h.filter(r => r.metric === m &&
-                                  r.dimension === "all");
-  const weeks = [...new Set(pick("avg_age_days")
-                   .map(r => r.snapshot_date))].sort();
-  if (weeks.length < 3) return;
 
-  /* Pre-existing: there is no #trend-section in the markup, so this
-     used to throw inside the promise and take the rest of this
-     handler with it, silently. Guarded rather than removed, because
-     the section is presumably still coming.                      */
+  const rows = (m, dim) => h.filter(r => r.metric === m &&
+                                         r.dimension === dim);
+  const weeks = [...new Set(h.map(r => r.snapshot_date))].sort();
+  if (weeks.length < 2) return;
+
   const tsec = document.getElementById("trend-section");
   if (!tsec) return;
   tsec.hidden = false;
-  const series = (m, colour, axis) => ({
-    label: m.replace(/_/g, " "),
+
+  const roles = [...new Set(h.filter(r => r.metric === "role_count")
+      .map(r => r.dimension))]
+      .sort((a, b) => {
+        const v = f => (rows("role_count", f).slice(-1)[0] || {}).value || 0;
+        return v(b) - v(a);
+      });
+
+  const ALL = "__all";
+  let current = ALL;
+  let chart = null;
+
+  const series = (m, dim, label, colour, axis) => ({
+    label,
     data: weeks.map(w =>
-      (pick(m).find(r => r.snapshot_date === w) || {}).value),
+      (rows(m, dim).find(r => r.snapshot_date === w) || {}).value),
     borderColor: colour, backgroundColor: colour,
     tension: .3, pointRadius: 3, fill: false, yAxisID: axis
   });
 
-  new Chart(document.getElementById("trend"), {
-    type: "line",
-    data: { labels: weeks.map(w => String(w).slice(0, 10)),
-      datasets: [series("avg_age_days", CORAL, "y"),
-                 series("live_postings", STEEL, "y1")] },
-    options: {
-      plugins: { legend: { position: "bottom",
-                           labels: { boxWidth: 12 } } },
-      scales: {
-        x:  { grid: { display: false },
-              title: { display: true, text: "week of the snapshot" } },
-        y:  { position: "left",  grid: { color: LINE },
-              title: { display: true, text: "avg days open" } },
-        y1: { position: "right", grid: { display: false },
-              title: { display: true, text: "live postings" } }
+  const intTicks = {
+    precision: 0,
+    callback: v => Number.isInteger(v) ? v.toLocaleString("en-US") : null
+  };
+
+  const showAge = () => document.getElementById("tshow-age").checked;
+
+  function draw() {
+    if (chart) chart.destroy();
+
+    const hasRoleAge = current !== ALL &&
+      rows("role_avg_age_days", current).length > 0;
+    const ageLabel = current === ALL ? "avg days open"
+      : hasRoleAge ? rlab(current) + " avg days open"
+                   : "avg days open (all roles)";
+    const volLabel = current === ALL
+      ? "live postings" : rlab(current) + " postings";
+
+    const datasets = [];
+    if (showAge())
+      datasets.push(hasRoleAge
+        ? series("role_avg_age_days", current, ageLabel, CORAL, "y")
+        : series("avg_age_days", "all", ageLabel, CORAL, "y"));
+    datasets.push(current === ALL
+      ? series("live_postings", "all", volLabel, STEEL, "y1")
+      : series("role_count", current, volLabel, STEEL, "y1"));
+
+    chart = new Chart(document.getElementById("trend"), {
+      type: "line",
+      data: { labels: weeks.map(w => String(w).slice(0, 10)), datasets },
+      options: {
+        interaction: { mode: "index", intersect: false },
+        plugins: { legend: { position: "bottom",
+                             labels: { boxWidth: 12 } } },
+        scales: {
+          x:  { grid: { display: false },
+                title: { display: true, text: "snapshot date" } },
+          y:  { position: "left", grid: { display: showAge(), color: LINE },
+                display: showAge(), ticks: intTicks,
+                title: { display: true, text: "avg days open" } },
+          y1: { position: "right", grid: { display: !showAge() },
+                ticks: intTicks,
+                title: { display: true,
+                         text: current === ALL ? "live postings"
+                                               : "postings in role" } }
+        }
       }
-    }
-  });
+    });
+  }
+
+  const pickEl = document.getElementById("trendpick");
+  if (pickEl && roles.length) {
+    pickEl.innerHTML = [ALL, ...roles].map(f =>
+      `<button type="button" data-f="${f}"
+         aria-pressed="${f === ALL}">` +
+      `${f === ALL ? "All roles" : esc(rlab(f))}</button>`).join("");
+    pickEl.addEventListener("click", e => {
+      const b = e.target.closest("button");
+      if (!b) return;
+      current = b.dataset.f;
+      pickEl.querySelectorAll("button").forEach(x =>
+        x.setAttribute("aria-pressed", x === b));
+      draw();
+    });
+  } else if (pickEl) {
+    pickEl.closest(".mapctl").hidden = true;
+  }
+
+  const ageEl = document.getElementById("tshow-age");
+  if (ageEl) ageEl.addEventListener("change", draw);
+
+  draw();
 });
 </script>
 
@@ -2777,9 +2988,11 @@ get("history").then(h => {
 
       /* one <optgroup> per country, in CORDER, options already in
          volume order because the array itself is sorted that way */
-      function optionMarkup() {
+      function optionMarkup(q) {
+        const needle = (q || "").trim().toLowerCase();
         let html = "", open = null;
         cities.forEach((c, i) => {
+          if (needle && !c.label.toLowerCase().includes(needle)) return;
           if (c.country !== open) {
             if (open !== null) html += `</optgroup>`;
             open = c.country;
@@ -2794,16 +3007,38 @@ get("history").then(h => {
         return html;
       }
 
+      /* free-text filters, one per dropdown. A search that matches
+         nothing keeps the full list rather than emptying the picker,
+         and flags the box instead.                                 */
+      const qA = document.getElementById("cmpAq");
+      const qB = document.getElementById("cmpBq");
+
+      function fillOne(sel, box, keep, fallbackIdx) {
+        const q = box ? box.value : "";
+        let markup = optionMarkup(q);
+        if (!markup) {
+          markup = optionMarkup("");
+          if (box) box.classList.add("nohit");
+        } else if (box) {
+          box.classList.remove("nohit");
+        }
+        sel.innerHTML = markup;
+        const has = v => !!sel.querySelector(`option[value="${v}"]`);
+        const ik = cities.findIndex(c => c.key === keep);
+        if (ik >= 0 && has(ik)) sel.value = ik;
+        else if (fallbackIdx != null && has(fallbackIdx))
+          sel.value = fallbackIdx;
+        else sel.selectedIndex = 0;
+      }
+
       function fillCities(keepA, keepB) {
-        const markup = optionMarkup();
-        selA.innerHTML = markup;
-        selB.innerHTML = markup;
-        const ia = cities.findIndex(c => c.key === keepA);
-        const ib = cities.findIndex(c => c.key === keepB);
-        selA.value = ia >= 0 ? ia : 0;
-        selB.value = (ib >= 0 && ib !== +selA.value)
-                   ? ib
-                   : (cities.length > 1 ? (+selA.value === 0 ? 1 : 0) : 0);
+        fillOne(selA, qA, keepA, 0);
+        fillOne(selB, qB, keepB, null);
+        if (+selB.value === +selA.value) {
+          const alt = [...selB.options]
+            .find(o => +o.value !== +selA.value);
+          if (alt) selB.value = alt.value;
+        }
       }
 
       function series(c, colour) {
@@ -2878,10 +3113,48 @@ get("history").then(h => {
       selB.addEventListener("change", draw);
       if (selR) selR.addEventListener("change", refresh);
 
+      [[qA, selA], [qB, selB]].forEach(([box, sel]) => {
+        if (!box) return;
+        box.addEventListener("input", () => {
+          const keep = (cities[+sel.value] || {}).key;
+          fillOne(sel, box, keep, 0);
+          draw();
+        });
+      });
+
       rescale();
       fillCities(null, null);
       draw();
     });
+})();
+</script>
+
+<script>
+/* ---------------- foldable limitations ----------------
+   The caveats block ships collapsed. Anything that points at it,
+   the nav link or a deep link, has to open it first, otherwise the
+   jump lands on a closed panel and looks broken.               */
+(function () {
+  const btn  = document.getElementById("limbtn");
+  const body = document.getElementById("limbody");
+  if (!btn || !body) return;
+
+  function setOpen(on) {
+    body.hidden = !on;
+    btn.setAttribute("aria-expanded", on ? "true" : "false");
+    const txt = btn.querySelector(".txt");
+    if (txt) txt.textContent = on ? "Hide" : "Show";
+  }
+
+  btn.addEventListener("click", () =>
+    setOpen(btn.getAttribute("aria-expanded") !== "true"));
+
+  document.querySelectorAll('a[href="#limitations"]')
+          .forEach(a => a.addEventListener("click", () => setOpen(true)));
+  window.addEventListener("hashchange", () => {
+    if (location.hash === "#limitations") setOpen(true);
+  });
+  if (location.hash === "#limitations") setOpen(true);
 })();
 </script>
 

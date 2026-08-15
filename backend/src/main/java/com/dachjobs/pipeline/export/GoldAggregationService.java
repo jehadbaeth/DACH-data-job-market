@@ -317,6 +317,22 @@ public class GoldAggregationService {
                         java.util.stream.Collectors.summingLong(RoleBreakdownRow::nPostings)))
                 .forEach((family, count) -> rows.add(new M("role_count", family, (double) count)));
 
+        /* Weighted by nPostings: each RoleBreakdownRow is already grouped by
+           (country, roleGroup, roleFamily, seniority), so a plain average of
+           avgAgeDays across those sub-groups would over-weight small ones. */
+        roles.stream()
+                .filter(r -> r.avgAgeDays() != null)
+                .collect(java.util.stream.Collectors.groupingBy(RoleBreakdownRow::roleFamily))
+                .forEach((family, subset) -> {
+                    long n = subset.stream().mapToLong(RoleBreakdownRow::nPostings).sum();
+                    double weighted = subset.stream()
+                            .mapToDouble(r -> r.avgAgeDays() * r.nPostings()).sum();
+                    if (n > 0) {
+                        rows.add(new M("role_avg_age_days", family,
+                                Math.round(weighted / n * 10.0) / 10.0));
+                    }
+                });
+
         rows.stream().filter(r -> r.value() != null).forEach(r -> {
             HistoryMetric hm = new HistoryMetric();
             hm.setRulesetId(rulesetId);

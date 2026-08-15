@@ -1,8 +1,8 @@
 # What's up with the software-dev job market in Austria/Germany/Switzerland?
 
-**[Open the live tracker](https://carl-latitudee5570.tail5b4e29.ts.net/)** · updated every Monday at 06:00
+**[Open the live tracker](https://carl-latitudee5570.tail5b4e29.ts.net/)** · updated daily at 03:00
 
-A weekly snapshot of the DACH software development job market: live postings from Germany, Austria and Switzerland, classified into ten engineering role families and scanned against a language/framework/devops/cloud/database skill dictionary. A Spring Boot backend queries the Adzuna API, classifies and aggregates every posting in Postgres, and exports static JSON that a single-file Chart.js dashboard (`docs/index.html`) reads directly — no server needed to view it.
+A daily snapshot of the DACH software development job market: live postings from Germany, Austria and Switzerland, classified into ten engineering role families and scanned against a language/framework/devops/cloud/database skill dictionary. A Spring Boot backend queries the Adzuna API, classifies and aggregates every posting in Postgres, and exports static JSON that a single-file Chart.js dashboard (`docs/index.html`) reads directly — no server needed to view it.
 
 This project started as a fork of [Christoph Ruckensteiner](https://www.linkedin.com/in/cruckensteiner112)'s original data-job-market dashboard, and keeps its UI layout and overall concept. Everything underneath it has since been rebuilt: the original was a Python/Databricks (Delta Lake, PySpark, Unity Catalog) pipeline tracking data/AI roles. This version is a Java/Spring Boot/Postgres pipeline, and it tracks a different vertical entirely — software engineering roles, not data/AI roles.
 
@@ -63,7 +63,7 @@ Adzuna API (de, at, ch)
   -> docs/index.html (static Chart.js dashboard, reads the JSON directly)
 ```
 
-The whole pipeline (ingest → classify → aggregate → export) runs weekly via a Spring `@Scheduled` job, and can be triggered manually:
+The whole pipeline (ingest → classify → aggregate → export) runs daily via a Spring `@Scheduled` job, and can be triggered manually:
 
 ```bash
 curl -X POST "http://localhost:8080/api/pipeline/run?skipIngest=false"
@@ -96,7 +96,7 @@ curl -X POST http://localhost:8080/api/pipeline/export/software-dev
 1. Get an `app_id` and `app_key` from `developer.adzuna.com`.
 2. Copy `.env.example` to `.env` and fill in `DB_PASSWORD`, `ADZUNA_APP_ID`, `ADZUNA_APP_KEY` (and optionally `TZ`, `WEB_PORT`). `.env` is gitignored — never commit it.
 3. `docker compose up -d --build` — this starts Postgres, the Spring Boot app, and an nginx container (`web`) that serves `docs/` and proxies `/api/` to the app, all behind a single port (`WEB_PORT`, default `8087`). Flyway applies all migrations automatically on boot.
-4. Trigger a run (see the `curl` commands above), or wait for the Monday 03:00 scheduled job.
+4. Trigger a run (see the `curl` commands above), or wait for the daily 03:00 scheduled job.
 5. Open `http://<host>:<WEB_PORT>/` — the dashboard fetches everything it needs from `docs/data/*.json` produced by the run. To expose it beyond your LAN, point a reverse proxy or Tailscale Funnel at that port.
 
 Backend tests:

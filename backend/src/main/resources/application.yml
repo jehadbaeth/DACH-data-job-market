@@ -28,9 +28,8 @@ server:
 
 dachjobs:
   pipeline:
-    # Weekly, Monday 03:00 server time - matches the cadence the original
-    # Databricks notebooks were scheduled at. Override with DACHJOBS_PIPELINE_CRON.
-    cron: ${DACHJOBS_PIPELINE_CRON:0 0 3 * * MON}
+    # Daily, 03:00 server time. Override with DACHJOBS_PIPELINE_CRON.
+    cron: ${DACHJOBS_PIPELINE_CRON:0 0 3 * * *}
   adzuna:
     base-url: https://api.adzuna.com/v1/api/jobs
     app-id: ${ADZUNA_APP_ID:}
