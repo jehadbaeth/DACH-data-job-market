@@ -14,11 +14,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * Chains ingest -> classify -> export, the same weekly cadence the original
- * ran as separate Databricks notebook jobs. Ingest is global (one Adzuna
- * pull feeds every ruleset); classify and export run per ruleset so a new
- * vertical added as data (a new ruleset row) is picked up automatically,
- * and one ruleset's validation-gate failure doesn't block the others.
+ * Chains ingest -> classify -> export, Tue-Sat (skips the Sun/Mon slots
+ * that would otherwise cover the weekend's low posting activity). Ingest
+ * is global (one Adzuna pull feeds every ruleset); classify and export
+ * run per ruleset so a new vertical added as data (a new ruleset row) is
+ * picked up automatically, and one ruleset's validation-gate failure
+ * doesn't block the others.
  */
 @Service
 public class PipelineRunner {
@@ -49,7 +50,7 @@ public class PipelineRunner {
     public record PipelineRunSummary(IngestService.IngestSummary ingest, List<RulesetRunResult> rulesets) {
     }
 
-    @Scheduled(cron = "${dachjobs.pipeline.cron:0 0 3 * * MON}")
+    @Scheduled(cron = "${dachjobs.pipeline.cron:0 0 3 * * TUE-SAT}")
     public void scheduledRun() {
         PipelineRunSummary summary = run(false);
         long failed = summary.rulesets().stream().filter(r -> !r.success()).count();

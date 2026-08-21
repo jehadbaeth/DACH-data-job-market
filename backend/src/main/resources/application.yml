@@ -28,8 +28,10 @@ server:
 
 dachjobs:
   pipeline:
-    # Daily, 03:00 server time. Override with DACHJOBS_PIPELINE_CRON.
-    cron: ${DACHJOBS_PIPELINE_CRON:0 0 3 * * *}
+    # 03:00 server time, Tue-Sat. Skips the Sun and Mon 03:00 slots, which
+    # would otherwise cover Sat/Sun activity - a weekend low with little to
+    # report. Override with DACHJOBS_PIPELINE_CRON.
+    cron: ${DACHJOBS_PIPELINE_CRON:0 0 3 * * TUE-SAT}
   adzuna:
     base-url: https://api.adzuna.com/v1/api/jobs
     app-id: ${ADZUNA_APP_ID:}

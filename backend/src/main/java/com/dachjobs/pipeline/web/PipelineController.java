@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.http.HttpStatus;
 
-/** Manual triggers for the individual pipeline steps and for a full run, on top of the weekly {@link PipelineRunner} schedule. */
+/** Manual triggers for the individual pipeline steps and for a full run, on top of the scheduled {@link PipelineRunner} run. */
 @RestController
 public class PipelineController {
 
