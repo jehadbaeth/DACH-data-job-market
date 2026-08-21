@@ -2,12 +2,15 @@ package com.dachjobs.pipeline.ingest;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.client.HttpServerErrorException;
 import org.springframework.web.client.RestClient;
 
 /**
  * Direct port of the fetch() function in notebooks/01_ingest_adzuna.py:
  * up to 5 attempts, exponential backoff on HTTP 429, page-past-the-end
- * (HTTP 410) treated as an empty page rather than an error.
+ * (HTTP 410) treated as an empty page rather than an error. Also backs
+ * off on 5xx (Adzuna's own outages happen, e.g. a bare 503) instead of
+ * letting it escape and abort the entire scheduled run.
  */
 @Component
 public class AdzunaClient {
@@ -34,7 +37,7 @@ public class AdzunaClient {
                                 .build(country, page))
                         .retrieve()
                         .body(AdzunaSearchResponse.class);
-            } catch (HttpClientErrorException.TooManyRequests e) {
+            } catch (HttpClientErrorException.TooManyRequests | HttpServerErrorException e) {
                 sleep((long) Math.pow(2, attempt) * 1000);
             } catch (HttpClientErrorException.Gone e) {
                 AdzunaSearchResponse empty = new AdzunaSearchResponse();

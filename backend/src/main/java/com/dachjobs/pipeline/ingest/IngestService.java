@@ -43,29 +43,33 @@ public class IngestService {
 
         for (String country : properties.getCountries()) {
             for (String role : properties.getRoles()) {
-                for (int page = 1; page <= properties.getMaxPages(); page++) {
-                    AdzunaSearchResponse response = client.fetch(country, role, page);
-                    callsMade++;
+                try {
+                    for (int page = 1; page <= properties.getMaxPages(); page++) {
+                        AdzunaSearchResponse response = client.fetch(country, role, page);
+                        callsMade++;
 
-                    List<AdzunaSearchResponse.Result> results = response.getResults();
-                    for (AdzunaSearchResponse.Result r : results) {
-                        if (rawPostingRepository.existsByAdzunaIdAndPullDate(r.getId(), pullDate)) {
-                            postingsSkippedAlreadyPulledToday++;
-                            continue;
+                        List<AdzunaSearchResponse.Result> results = response.getResults();
+                        for (AdzunaSearchResponse.Result r : results) {
+                            if (rawPostingRepository.existsByAdzunaIdAndPullDate(r.getId(), pullDate)) {
+                                postingsSkippedAlreadyPulledToday++;
+                                continue;
+                            }
+                            rawPostingRepository.save(toEntity(r, country, role, page, pullDate));
+                            postingsSaved++;
                         }
-                        rawPostingRepository.save(toEntity(r, country, role, page, pullDate));
-                        postingsSaved++;
-                    }
 
-                    if (page == 1) {
-                        log.info("{} {} total={} page1={}", country, role, response.getCount(), results.size());
-                    }
+                        if (page == 1) {
+                            log.info("{} {} total={} page1={}", country, role, response.getCount(), results.size());
+                        }
 
-                    if (results.size() < properties.getResultsPerPage()) {
-                        break;
-                    }
+                        if (results.size() < properties.getResultsPerPage()) {
+                            break;
+                        }
 
-                    politePause();
+                        politePause();
+                    }
+                } catch (Exception e) {
+                    log.error("Ingest failed for {}/{}, skipping to next query: {}", country, role, e.getMessage(), e);
                 }
             }
         }
