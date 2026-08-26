@@ -43,33 +43,36 @@ public class IngestService {
 
         for (String country : properties.getCountries()) {
             for (String role : properties.getRoles()) {
-                try {
-                    for (int page = 1; page <= properties.getMaxPages(); page++) {
-                        AdzunaSearchResponse response = client.fetch(country, role, page);
-                        callsMade++;
-
-                        List<AdzunaSearchResponse.Result> results = response.getResults();
-                        for (AdzunaSearchResponse.Result r : results) {
-                            if (rawPostingRepository.existsByAdzunaIdAndPullDate(r.getId(), pullDate)) {
-                                postingsSkippedAlreadyPulledToday++;
-                                continue;
-                            }
-                            rawPostingRepository.save(toEntity(r, country, role, page, pullDate));
-                            postingsSaved++;
-                        }
-
-                        if (page == 1) {
-                            log.info("{} {} total={} page1={}", country, role, response.getCount(), results.size());
-                        }
-
-                        if (results.size() < properties.getResultsPerPage()) {
-                            break;
-                        }
-
-                        politePause();
+                for (int page = 1; page <= properties.getMaxPages(); page++) {
+                    AdzunaSearchResponse response;
+                    try {
+                        response = client.fetch(country, role, page);
+                    } catch (Exception e) {
+                        log.error("Ingest failed for {}/{} page {}, skipping to next page: {}",
+                                country, role, page, e.getMessage(), e);
+                        continue;
                     }
-                } catch (Exception e) {
-                    log.error("Ingest failed for {}/{}, skipping to next query: {}", country, role, e.getMessage(), e);
+                    callsMade++;
+
+                    List<AdzunaSearchResponse.Result> results = response.getResults();
+                    for (AdzunaSearchResponse.Result r : results) {
+                        if (rawPostingRepository.existsByAdzunaIdAndPullDate(r.getId(), pullDate)) {
+                            postingsSkippedAlreadyPulledToday++;
+                            continue;
+                        }
+                        rawPostingRepository.save(toEntity(r, country, role, page, pullDate));
+                        postingsSaved++;
+                    }
+
+                    if (page == 1) {
+                        log.info("{} {} total={} page1={}", country, role, response.getCount(), results.size());
+                    }
+
+                    if (results.size() < properties.getResultsPerPage()) {
+                        break;
+                    }
+
+                    politePause();
                 }
             }
         }
